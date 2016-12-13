@@ -4,21 +4,23 @@
  * and open the template in the editor.
  */
 package GameDatabase;
- 
+
 import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
  
 /**
  *
- * @author sqlitetutorial.net
+ * @author Jeff Paquette
  */
-public class SQLiteJDBCDriverConnection {
+public class SQLiteDriver {
      /**
-     * Connect to a sample database
+     * Connect to a database
+     * @return a connection to the database
      */
-    public static void connect() {
+    public Connection connect() {
         Connection conn = null;
         try {
             // db parameters
@@ -26,20 +28,23 @@ public class SQLiteJDBCDriverConnection {
             String url = "jdbc:sqlite:" + AbsolutePath + "GameData.db";
             
             // create a connection to the database
-            conn = DriverManager.getConnection(url);
-            
-            System.out.println("Connection to SQLite has been established.");
-            
+            conn = DriverManager.getConnection(url);            
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-        } finally {
-            try {
-                if (conn != null) {
-                    conn.close();
-                }
-            } catch (SQLException ex) {
-                System.out.println(ex.getMessage());
-            }
         }
+        
+        return conn;
+    }
+    
+    public String insert(String sql){   
+        try {
+            Connection conn = connect();
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.execute();
+        } catch (SQLException e){
+            return e.getMessage();
+        }
+        
+        return "Successful entry";
     }
 }

@@ -80,30 +80,40 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="AddCompanyMessageLabel" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="AddCompanyConfirmButton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="AddCompanyClearButton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="AddCompanyExitButton" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="CompanyLocationLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="CompanyNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="0" pref="62" max="32767" attributes="0"/>
+                                      <Component id="AddCompanyConfirmButton" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="AddCompanyClearButton" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="AddCompanyExitButton" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="CompanyLocationLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="CompanyNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="CompanyNameTextField" pref="221" max="32767" attributes="0"/>
+                                          <Component id="CompanyLocationTextField" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="CompanyNameTextField" pref="200" max="32767" attributes="0"/>
-                                  <Component id="CompanyLocationTextField" max="32767" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="CompanyNameErrorLabel" max="32767" attributes="0"/>
+                                  <Component id="CompanyLocationErrorLabel" pref="142" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -114,11 +124,13 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="CompanyNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="CompanyNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="CompanyNameErrorLabel" alignment="1" pref="34" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="CompanyLocationLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="CompanyLocationTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="CompanyLocationErrorLabel" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -126,7 +138,9 @@
                           <Component id="AddCompanyClearButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="AddCompanyExitButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="199" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
+                      <Component id="AddCompanyMessageLabel" min="-2" pref="21" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -156,11 +170,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Confirm"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddCompanyConfirmButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="AddCompanyClearButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Clear"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddCompanyClearButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="AddCompanyExitButton">
               <Properties>
@@ -169,6 +189,12 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddCompanyExitButtonActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="CompanyNameErrorLabel">
+            </Component>
+            <Component class="javax.swing.JLabel" name="CompanyLocationErrorLabel">
+            </Component>
+            <Component class="javax.swing.JLabel" name="AddCompanyMessageLabel">
             </Component>
           </SubComponents>
         </Container>
@@ -184,29 +210,39 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="AddPlatformConfirmButton" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="AddPlatformConfirmButton" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="AddPlatformClearButton" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="AddPlatformExitButton" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="PlatformYearOfReleaseLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="PlatformNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="PlatformNameTextField" pref="201" max="32767" attributes="0"/>
+                                          <Component id="PlatformYearOfReleaseTextField" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="AddPlatformClearButton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="AddPlatformExitButton" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="PlatformYearOfReleaseLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="PlatformNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="PlatformNameTextField" pref="201" max="32767" attributes="0"/>
-                                  <Component id="PlatformYearOfReleaseTextField" max="32767" attributes="0"/>
+                                  <Component id="PlatformNameErrorLabel" max="32767" attributes="0"/>
+                                  <Component id="PlatformYearOfReleaseErrorLabel" pref="118" max="32767" attributes="0"/>
                               </Group>
                           </Group>
+                          <Component id="AddPlatformMessageLabel" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="116" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -217,11 +253,13 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="PlatformNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="PlatformNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="PlatformNameErrorLabel" alignment="0" pref="34" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="PlatformYearOfReleaseLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="PlatformYearOfReleaseTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="PlatformYearOfReleaseErrorLabel" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -229,7 +267,9 @@
                           <Component id="AddPlatformClearButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="AddPlatformExitButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="201" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="159" max="-2" attributes="0"/>
+                      <Component id="AddPlatformMessageLabel" min="-2" pref="20" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -253,11 +293,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Confirm"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddPlatformConfirmButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="AddPlatformClearButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Clear"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddPlatformClearButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="AddPlatformExitButton">
               <Properties>
@@ -266,6 +312,12 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddPlatformExitButtonActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="PlatformNameErrorLabel">
+            </Component>
+            <Component class="javax.swing.JLabel" name="PlatformYearOfReleaseErrorLabel">
+            </Component>
+            <Component class="javax.swing.JLabel" name="AddPlatformMessageLabel">
             </Component>
           </SubComponents>
         </Container>
@@ -300,10 +352,10 @@
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="AddGenreTextField" pref="200" max="32767" attributes="0"/>
-                                  <Component id="AddYearOfReleaseTextField" max="32767" attributes="0"/>
-                                  <Component id="jTextField1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="GameGenreTextField" pref="200" max="32767" attributes="0"/>
+                                  <Component id="GameYearOfReleaseTextField" max="32767" attributes="0"/>
+                                  <Component id="GameDeveloperTextField" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="GamePublisherTextField" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -313,12 +365,21 @@
                               </Group>
                               <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="AddTitleTextField" pref="199" max="32767" attributes="0"/>
-                                  <Component id="AddPlatformTextField" max="32767" attributes="0"/>
+                                  <Component id="GameTitleTextField" pref="199" max="32767" attributes="0"/>
+                                  <Component id="GamePlatformTextField" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="117" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="GameTitleErrorLabel" max="32767" attributes="0"/>
+                          <Component id="GamePlatformErrorLabel" max="32767" attributes="0"/>
+                          <Component id="GameYearOfReleaseErrorLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="GameGenreErrorLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="GameDeveloperErrorLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="GamePublisherErrorLabel" alignment="0" pref="111" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -328,32 +389,38 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="TitleLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="AddTitleTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="GameTitleTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="GameTitleErrorLabel" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="PlatformLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="AddPlatformTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="GamePlatformTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="GamePlatformErrorLabel" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="YearOfReleaseLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="AddYearOfReleaseTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="GameYearOfReleaseTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="GameYearOfReleaseErrorLabel" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="GenreLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="AddGenreTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="GameGenreTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="GameGenreErrorLabel" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="GameDeveloperTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="GameDeveloperErrorLabel" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="GamePublisherTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="GamePublisherErrorLabel" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -361,7 +428,7 @@
                           <Component id="AddGameClearButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="AddGameExitButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="38" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -387,23 +454,29 @@
                 <Property name="text" type="java.lang.String" value="Genre:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="AddTitleTextField">
+            <Component class="javax.swing.JTextField" name="GameTitleTextField">
             </Component>
-            <Component class="javax.swing.JTextField" name="AddPlatformTextField">
+            <Component class="javax.swing.JTextField" name="GamePlatformTextField">
             </Component>
-            <Component class="javax.swing.JTextField" name="AddYearOfReleaseTextField">
+            <Component class="javax.swing.JTextField" name="GameYearOfReleaseTextField">
             </Component>
-            <Component class="javax.swing.JTextField" name="AddGenreTextField">
+            <Component class="javax.swing.JTextField" name="GameGenreTextField">
             </Component>
             <Component class="javax.swing.JButton" name="AddGameConfirmButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Confirm"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddGameConfirmButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="AddGameClearButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Clear"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddGameClearButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="AddGameExitButton">
               <Properties>
@@ -423,9 +496,21 @@
                 <Property name="text" type="java.lang.String" value="Publisher:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField1">
+            <Component class="javax.swing.JTextField" name="GameDeveloperTextField">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField2">
+            <Component class="javax.swing.JTextField" name="GamePublisherTextField">
+            </Component>
+            <Component class="javax.swing.JLabel" name="GameTitleErrorLabel">
+            </Component>
+            <Component class="javax.swing.JLabel" name="GamePlatformErrorLabel">
+            </Component>
+            <Component class="javax.swing.JLabel" name="GameYearOfReleaseErrorLabel">
+            </Component>
+            <Component class="javax.swing.JLabel" name="GameGenreErrorLabel">
+            </Component>
+            <Component class="javax.swing.JLabel" name="GameDeveloperErrorLabel">
+            </Component>
+            <Component class="javax.swing.JLabel" name="GamePublisherErrorLabel">
             </Component>
           </SubComponents>
         </Container>
