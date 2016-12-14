@@ -34,7 +34,8 @@ public class SQLiteDriver {
         }
         
         String AbsolutePath = new File(".").getAbsolutePath();
-        String url = "jdbc:sqlite:" + AbsolutePath.substring(0, AbsolutePath.length() - 1) + "GameDatabase.db";
+        AbsolutePath = AbsolutePath.substring(0, AbsolutePath.length() - 1);
+        String url = "jdbc:sqlite:" + AbsolutePath + "GameDatabase.db";
             
         // create a connection to the database
         System.out.println("Getting connection");
