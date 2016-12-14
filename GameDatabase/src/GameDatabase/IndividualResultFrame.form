@@ -30,11 +30,6 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="IndividualResultsGenreLabel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
-                                  <Component id="IndividualResultsGenreTextField" max="32767" attributes="0"/>
-                              </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="IndividualResultsYearOfReleaseLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -49,6 +44,19 @@
                                   <Component id="IndividualResultsPlatformLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                                   <Component id="IndividualResultsPlatformTextField" min="-2" pref="200" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="IndividualResultsGenreLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="IndividualResultsDeveloperLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="IndividualResultsPublisherLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="IndividualResultsGenreTextField" max="32767" attributes="0"/>
+                                      <Component id="IndividualResultsDeveloperTextField" max="32767" attributes="0"/>
+                                      <Component id="IndividualResultsPublisherTextField" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -89,10 +97,20 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="IndividualResultsDeveloperLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="IndividualResultsDeveloperTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="IndividualResultsPublisherLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="IndividualResultsPublisherTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="67" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="IndividualResultsUpdateButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="IndividialResultsCancelButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="243" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
               <Component id="IndividualResultsMessagelabel" min="-2" pref="20" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -142,6 +160,20 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IndividialResultsCancelButtonActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="IndividualResultsDeveloperLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Developer:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="IndividualResultsPublisherLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Publisher:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="IndividualResultsDeveloperTextField">
+    </Component>
+    <Component class="javax.swing.JTextField" name="IndividualResultsPublisherTextField">
     </Component>
   </SubComponents>
 </Form>

@@ -38,6 +38,10 @@ public class IndividualResultFrame extends javax.swing.JFrame {
         IndividualResultsMessagelabel = new javax.swing.JLabel();
         IndividualResultsUpdateButton = new javax.swing.JButton();
         IndividialResultsCancelButton = new javax.swing.JButton();
+        IndividualResultsDeveloperLabel = new javax.swing.JLabel();
+        IndividualResultsPublisherLabel = new javax.swing.JLabel();
+        IndividualResultsDeveloperTextField = new javax.swing.JTextField();
+        IndividualResultsPublisherTextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,6 +62,10 @@ public class IndividualResultFrame extends javax.swing.JFrame {
             }
         });
 
+        IndividualResultsDeveloperLabel.setText("Developer:");
+
+        IndividualResultsPublisherLabel.setText("Publisher:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -70,10 +78,6 @@ public class IndividualResultFrame extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(IndividualResultsGenreLabel)
-                                    .addGap(85, 85, 85)
-                                    .addComponent(IndividualResultsGenreTextField))
-                                .addGroup(layout.createSequentialGroup()
                                     .addComponent(IndividualResultsYearOfReleaseLabel)
                                     .addGap(18, 18, 18)
                                     .addComponent(IndividualResultsYearOfReleaseTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -84,7 +88,17 @@ public class IndividualResultFrame extends javax.swing.JFrame {
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(IndividualResultsPlatformLabel)
                                     .addGap(67, 67, 67)
-                                    .addComponent(IndividualResultsPlatformTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(IndividualResultsPlatformTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(IndividualResultsGenreLabel)
+                                        .addComponent(IndividualResultsDeveloperLabel)
+                                        .addComponent(IndividualResultsPublisherLabel))
+                                    .addGap(56, 56, 56)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(IndividualResultsGenreTextField)
+                                        .addComponent(IndividualResultsDeveloperTextField)
+                                        .addComponent(IndividualResultsPublisherTextField))))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(IndividualResultsUpdateButton)
                                 .addGap(18, 18, 18)
@@ -113,9 +127,17 @@ public class IndividualResultFrame extends javax.swing.JFrame {
                     .addComponent(IndividualResultsGenreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(IndividualResultsDeveloperLabel)
+                    .addComponent(IndividualResultsDeveloperTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(IndividualResultsPublisherLabel)
+                    .addComponent(IndividualResultsPublisherTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(IndividualResultsUpdateButton)
                     .addComponent(IndividialResultsCancelButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 243, Short.MAX_VALUE)
+                .addGap(106, 106, 106)
                 .addComponent(IndividualResultsMessagelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -164,11 +186,15 @@ public class IndividualResultFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton IndividialResultsCancelButton;
+    private javax.swing.JLabel IndividualResultsDeveloperLabel;
+    private javax.swing.JTextField IndividualResultsDeveloperTextField;
     private javax.swing.JLabel IndividualResultsGenreLabel;
     private javax.swing.JTextField IndividualResultsGenreTextField;
     private javax.swing.JLabel IndividualResultsMessagelabel;
     private javax.swing.JLabel IndividualResultsPlatformLabel;
     private javax.swing.JTextField IndividualResultsPlatformTextField;
+    private javax.swing.JLabel IndividualResultsPublisherLabel;
+    private javax.swing.JTextField IndividualResultsPublisherTextField;
     private javax.swing.JLabel IndividualResultsTitleLabel;
     private javax.swing.JTextField IndividualResultsTitleTextField;
     private javax.swing.JButton IndividualResultsUpdateButton;
