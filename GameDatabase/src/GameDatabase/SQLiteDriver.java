@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import org.sqlite.SQLiteJDBCLoader;
  
 /**
  *
@@ -21,11 +22,19 @@ public class SQLiteDriver {
      * @return a connection to the database
      * @throws java.sql.SQLException
      */
+    
     public Connection connect() throws SQLException{
         Connection conn = null;
         // db parameters
+        
+        try {
+            Class.forName("org.sqlite.JDBC");
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        
         String AbsolutePath = new File(".").getAbsolutePath();
-        String url = "jdbc:sqlite:" + AbsolutePath.substring(0, AbsolutePath.length() - 1) + "GameDatabase.sql";
+        String url = "jdbc:sqlite:" + AbsolutePath.substring(0, AbsolutePath.length() - 1) + "GameDatabase.db";
             
         // create a connection to the database
         System.out.println("Getting connection");
