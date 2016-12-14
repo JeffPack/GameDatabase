@@ -19,20 +19,18 @@ public class SQLiteDriver {
      /**
      * Connect to a database
      * @return a connection to the database
+     * @throws java.sql.SQLException
      */
-    public Connection connect() {
+    public Connection connect() throws SQLException{
         Connection conn = null;
-        try {
-            // db parameters
-            String AbsolutePath = new File(".").getAbsolutePath();
-            String url = "jdbc:sqlite:" + AbsolutePath + "GameData.db";
+        // db parameters
+        String AbsolutePath = new File(".").getAbsolutePath();
+        String url = "jdbc:sqlite:" + AbsolutePath.substring(0, AbsolutePath.length() - 1) + "GameDatabase.sql";
             
-            // create a connection to the database
-            conn = DriverManager.getConnection(url);            
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-        
+        // create a connection to the database
+        System.out.println("Getting connection");
+        conn = DriverManager.getConnection(url);            
+        System.out.println("Got connection");
         return conn;
     }
     
@@ -46,5 +44,15 @@ public class SQLiteDriver {
         }
         
         return "Successful entry";
+    }
+    
+    public void delete(String sql){
+        try {
+            Connection conn = connect();
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.execute();
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
     }
 }
