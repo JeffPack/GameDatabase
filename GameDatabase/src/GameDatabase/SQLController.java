@@ -31,7 +31,7 @@ public class SQLController {
         return driver.insert(sql);
     }
     
-    public void addGame(String title, String platform, String developer, 
+    public String addGame(String title, String platform, String developer, 
             String publisher, int yearOfRelease, String genre){
         
         String sqlGame = "insert into game(title, platform, yearofrelease, genre) values (" +
@@ -41,8 +41,31 @@ public class SQLController {
         String sqlPublisher = "insert into publishedby(title, platform, company) values (" +
                 title + ", " + platform + ", " + publisher + ")";
         
-        driver.insert(sqlGame);
-        driver.insert(sqlDeveloper);
-        driver.insert(sqlPublisher);
+        String message = driver.insert(sqlGame);
+        if (!message.equals("Successful entry"))
+            return message;
+        
+        message = driver.insert(sqlDeveloper);
+        if (!message.equals("Successful entry"))
+        {
+            // delete game entry
+            String del = "delete from game where title = " + title + " and platform = " + platform + "";
+            driver.delete(del);
+            return message;
+        }
+        
+        message = driver.insert(sqlPublisher);
+        if (!message.equals("Successful entry"))
+        {
+            // delete game entry
+            String del = "delete from game where title = " + title + " and platform = " + platform + "";
+            driver.delete(del);
+            // delete developer entry
+            del = "delete from developedby where title = " + title + " and platform = " + platform + "";
+            driver.delete(del);
+            return message;
+        }
+        
+        return message;
     }
 }

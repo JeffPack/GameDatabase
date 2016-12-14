@@ -67,6 +67,7 @@ public class Main extends javax.swing.JFrame {
         GameGenreErrorLabel = new javax.swing.JLabel();
         GameDeveloperErrorLabel = new javax.swing.JLabel();
         GamePublisherErrorLabel = new javax.swing.JLabel();
+        AddGameMessageLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Video Game Database");
@@ -156,15 +157,17 @@ public class Main extends javax.swing.JFrame {
             AddCompanyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AddCompanyPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(AddCompanyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CompanyNameLabel)
-                    .addComponent(CompanyNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CompanyNameErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
+                .addGroup(AddCompanyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CompanyNameErrorLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                    .addGroup(AddCompanyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(CompanyNameLabel)
+                        .addComponent(CompanyNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(AddCompanyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CompanyLocationLabel)
-                    .addComponent(CompanyLocationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CompanyLocationErrorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(AddCompanyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CompanyLocationErrorLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(AddCompanyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(CompanyLocationLabel)
+                        .addComponent(CompanyLocationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(43, 43, 43)
                 .addGroup(AddCompanyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AddCompanyConfirmButton)
@@ -236,15 +239,17 @@ public class Main extends javax.swing.JFrame {
             AddPlatformTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AddPlatformTabPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(AddPlatformTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PlatformNameLabel)
-                    .addComponent(PlatformNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PlatformNameErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
+                .addGroup(AddPlatformTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PlatformNameErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                    .addGroup(AddPlatformTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(PlatformNameLabel)
+                        .addComponent(PlatformNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(AddPlatformTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PlatformYearOfReleaseLabel)
-                    .addComponent(PlatformYearOfReleaseTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PlatformYearOfReleaseErrorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(AddPlatformTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PlatformYearOfReleaseErrorLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(AddPlatformTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(PlatformYearOfReleaseLabel)
+                        .addComponent(PlatformYearOfReleaseTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(41, 41, 41)
                 .addGroup(AddPlatformTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AddPlatformConfirmButton)
@@ -296,82 +301,93 @@ public class Main extends javax.swing.JFrame {
             AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AddGameTabPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(AddGameTabPanelLayout.createSequentialGroup()
-                        .addComponent(AddGameConfirmButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(AddGameClearButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(AddGameExitButton))
-                    .addGroup(AddGameTabPanelLayout.createSequentialGroup()
-                        .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(YearOfReleaseLabel)
-                            .addComponent(GenreLabel)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
-                        .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(GameGenreTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(GameYearOfReleaseTextField)
-                            .addComponent(GameDeveloperTextField)
-                            .addComponent(GamePublisherTextField)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, AddGameTabPanelLayout.createSequentialGroup()
-                        .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TitleLabel)
-                            .addComponent(PlatformLabel))
-                        .addGap(63, 63, 63)
-                        .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(GameTitleTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
-                            .addComponent(GamePlatformTextField))))
-                .addGap(18, 18, 18)
                 .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(GameTitleErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(GamePlatformErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(GameYearOfReleaseErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(GameGenreErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(GameDeveloperErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(GamePublisherErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE))
+                    .addComponent(AddGameMessageLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(AddGameTabPanelLayout.createSequentialGroup()
+                        .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(AddGameTabPanelLayout.createSequentialGroup()
+                                .addComponent(AddGameConfirmButton)
+                                .addGap(18, 18, 18)
+                                .addComponent(AddGameClearButton)
+                                .addGap(18, 18, 18)
+                                .addComponent(AddGameExitButton))
+                            .addGroup(AddGameTabPanelLayout.createSequentialGroup()
+                                .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(YearOfReleaseLabel)
+                                    .addComponent(GenreLabel)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2))
+                                .addGap(18, 18, 18)
+                                .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(GameGenreTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(GameYearOfReleaseTextField)
+                                    .addComponent(GameDeveloperTextField)
+                                    .addComponent(GamePublisherTextField)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, AddGameTabPanelLayout.createSequentialGroup()
+                                .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TitleLabel)
+                                    .addComponent(PlatformLabel))
+                                .addGap(63, 63, 63)
+                                .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(GameTitleTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+                                    .addComponent(GamePlatformTextField))))
+                        .addGap(18, 18, 18)
+                        .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(GameTitleErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(GamePlatformErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(GameYearOfReleaseErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(GameGenreErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(GameDeveloperErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(GamePublisherErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         AddGameTabPanelLayout.setVerticalGroup(
             AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AddGameTabPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TitleLabel)
-                    .addComponent(GameTitleTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GameTitleErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(GameTitleErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
+                    .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(TitleLabel)
+                        .addComponent(GameTitleTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PlatformLabel)
-                    .addComponent(GamePlatformTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GamePlatformErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(GamePlatformErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
+                    .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(PlatformLabel)
+                        .addComponent(GamePlatformTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(YearOfReleaseLabel)
-                    .addComponent(GameYearOfReleaseTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GameYearOfReleaseErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(GameYearOfReleaseErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
+                    .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(YearOfReleaseLabel)
+                        .addComponent(GameYearOfReleaseTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(GenreLabel)
-                    .addComponent(GameGenreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GameGenreErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(GameGenreErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
+                    .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(GenreLabel)
+                        .addComponent(GameGenreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(GameDeveloperTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GameDeveloperErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(GameDeveloperErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                    .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1)
+                        .addComponent(GameDeveloperTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(GamePublisherTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GamePublisherErrorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(GamePublisherErrorLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(GamePublisherTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(28, 28, 28)
                 .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AddGameConfirmButton)
                     .addComponent(AddGameClearButton)
                     .addComponent(AddGameExitButton))
-                .addGap(65, 65, 65))
+                .addGap(18, 18, 18)
+                .addComponent(AddGameMessageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         MainMenuTabPanel.addTab("Add Game", AddGameTabPanel);
@@ -420,6 +436,9 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         CompanyNameTextField.setText("");
         CompanyLocationTextField.setText("");
+        CompanyNameErrorLabel.setText("");
+        CompanyLocationErrorLabel.setText("");
+        AddCompanyMessageLabel.setText("");
     }//GEN-LAST:event_AddCompanyClearButtonActionPerformed
 
     private void AddCompanyConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddCompanyConfirmButtonActionPerformed
@@ -438,10 +457,13 @@ public class Main extends javax.swing.JFrame {
             String message = controller.addCompany(name, location);
             AddCompanyMessageLabel.setText(message);
 
-            CompanyNameTextField.setText("");
-            CompanyLocationTextField.setText("");
-            CompanyNameErrorLabel.setText("");
-            CompanyLocationErrorLabel.setText("");
+            if (message.equals("Successful entry"))
+            {
+                CompanyNameTextField.setText("");
+                CompanyLocationTextField.setText("");
+                CompanyNameErrorLabel.setText("");
+                CompanyLocationErrorLabel.setText("");
+            }
         }
     }//GEN-LAST:event_AddCompanyConfirmButtonActionPerformed
 
@@ -449,6 +471,9 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         PlatformNameTextField.setText("");
         PlatformYearOfReleaseTextField.setText("");
+        PlatformNameErrorLabel.setText("");
+        PlatformYearOfReleaseErrorLabel.setText("");
+        AddPlatformMessageLabel.setText("");
     }//GEN-LAST:event_AddPlatformClearButtonActionPerformed
 
     private void AddPlatformConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddPlatformConfirmButtonActionPerformed
@@ -462,7 +487,6 @@ public class Main extends javax.swing.JFrame {
         try{
             year = Integer.parseInt(PlatformYearOfReleaseTextField.getText());
         } catch (NumberFormatException e){
-            PlatformYearOfReleaseTextField.setText("");
             PlatformYearOfReleaseErrorLabel.setText(e.getMessage());
             return;
         }
@@ -472,10 +496,13 @@ public class Main extends javax.swing.JFrame {
             String message = controller.addPlatform(name, year);
             AddPlatformMessageLabel.setText(message);
             
-            PlatformNameTextField.setText("");
-            PlatformYearOfReleaseTextField.setText("");
-            PlatformNameErrorLabel.setText("");
-            PlatformYearOfReleaseErrorLabel.setText("");
+            if (message.equals("Successful entry"))
+            {
+                PlatformNameTextField.setText("");
+                PlatformYearOfReleaseTextField.setText("");
+                PlatformNameErrorLabel.setText("");
+                PlatformYearOfReleaseErrorLabel.setText("");
+            }
         }
     }//GEN-LAST:event_AddPlatformConfirmButtonActionPerformed
 
@@ -487,18 +514,40 @@ public class Main extends javax.swing.JFrame {
         GameGenreTextField.setText("");
         GameDeveloperTextField.setText("");
         GamePublisherTextField.setText("");
+        GameTitleErrorLabel.setText("");
+        GamePlatformErrorLabel.setText("");
+        GameYearOfReleaseErrorLabel.setText("");
+        GameGenreErrorLabel.setText("");
+        GameDeveloperErrorLabel.setText("");
+        GamePublisherErrorLabel.setText("");
+        AddGameMessageLabel.setText("");
     }//GEN-LAST:event_AddGameClearButtonActionPerformed
 
     private void AddGameConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddGameConfirmButtonActionPerformed
         // TODO add your handling code here:
         String name = GameTitleTextField.getText();
+        if (name.equals(""))
+            GameTitleErrorLabel.setText("required field");
+        
         String platform = GameTitleTextField.getText();
+        if (platform.equals(""))
+            GamePlatformErrorLabel.setText("required field");
+        
+        String genre = GameGenreTextField.getText();
+        String developer = GameDeveloperTextField.getText();
+        String publisher = GamePublisherTextField.getText();
+        
         int year;
         try {
             year = Integer.parseInt(GameYearOfReleaseTextField.getText());
         } catch (NumberFormatException e){
-            GameYearOfReleaseTextField.setText("");
+            GameYearOfReleaseErrorLabel.setText(e.getMessage());
             return;
+        }
+        
+        if (!name.equals("") && !platform.equals(""))
+        {
+            String message = controller.addGame(name, platform, developer, publisher, year, genre);
         }
     }//GEN-LAST:event_AddGameConfirmButtonActionPerformed
 
@@ -556,6 +605,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton AddGameClearButton;
     private javax.swing.JButton AddGameConfirmButton;
     private javax.swing.JButton AddGameExitButton;
+    private javax.swing.JLabel AddGameMessageLabel;
     private javax.swing.JPanel AddGameTabPanel;
     private javax.swing.JButton AddPlatformClearButton;
     private javax.swing.JButton AddPlatformConfirmButton;
