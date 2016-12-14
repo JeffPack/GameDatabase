@@ -18,15 +18,15 @@ public class SQLController {
     }
     
     public String addCompany(String companyName, String companyLocation){
-        String sql = "insert into company(name, location) values(" + 
-                companyName + ", " + companyLocation + ")";
+        String sql = "insert into company values('" + 
+                companyName + "', '" + companyLocation + "')";
         
         return driver.insert(sql);
     }
     
     public String addPlatform(String platformName, int yearOfRelease) {
-        String sql = "insert into platform(name, yearofrelease) values(" +
-                platformName + ", " + yearOfRelease + ")";
+        String sql = "insert into platform values('" +
+                platformName + "', '" + yearOfRelease + "')";
         
         return driver.insert(sql);
     }
@@ -34,12 +34,12 @@ public class SQLController {
     public String addGame(String title, String platform, String developer, 
             String publisher, int yearOfRelease, String genre){
         
-        String sqlGame = "insert into game(title, platform, yearofrelease, genre) values (" +
-                title + ", " + platform + ", " + yearOfRelease + ", " + genre + ")";
-        String sqlDeveloper = "insert into developedby(title, platform, company) values (" +
-                title + ", " + platform + ", " + developer + ")";
-        String sqlPublisher = "insert into publishedby(title, platform, company) values (" +
-                title + ", " + platform + ", " + publisher + ")";
+        String sqlGame = "insert into game values ('" +
+                title + "', '" + platform + "', " + yearOfRelease + ", '" + genre + "')";
+        String sqlDeveloper = "insert into developedby values ('" +
+                title + "', '" + platform + "', '" + developer + "')";
+        String sqlPublisher = "insert into publishedby values ('" +
+                title + "', '" + platform + "', '" + publisher + "')";
         
         String message = driver.insert(sqlGame);
         if (!message.equals("Successful entry"))
@@ -49,7 +49,7 @@ public class SQLController {
         if (!message.equals("Successful entry"))
         {
             // delete game entry
-            String del = "delete from game where title = " + title + " and platform = " + platform + "";
+            String del = "delete from game where title = '" + title + "' and platform = '" + platform + "'";
             driver.delete(del);
             return message;
         }
@@ -58,10 +58,10 @@ public class SQLController {
         if (!message.equals("Successful entry"))
         {
             // delete game entry
-            String del = "delete from game where title = " + title + " and platform = " + platform + "";
+            String del = "delete from game where title = '" + title + "' and platform = '" + platform + "'";
             driver.delete(del);
             // delete developer entry
-            del = "delete from developedby where title = " + title + " and platform = " + platform + "";
+            del = "delete from developedby where title = '" + title + "' and platform = '" + platform + "'";
             driver.delete(del);
             return message;
         }
