@@ -1,5 +1,7 @@
 package GameDatabase;
 
+import javax.swing.table.DefaultTableModel;
+
 public class Main extends javax.swing.JFrame {
 
     SQLController controller;
@@ -38,6 +40,7 @@ public class Main extends javax.swing.JFrame {
         SearchDeveloperTextField = new javax.swing.JTextField();
         SearchPublisherLabel = new javax.swing.JLabel();
         SearchPublisherTextField = new javax.swing.JTextField();
+        SearchYearOfReleaseErrorLabel = new javax.swing.JLabel();
         AddCompanyPanel = new javax.swing.JPanel();
         CompanyNameLabel = new javax.swing.JLabel();
         CompanyLocationLabel = new javax.swing.JLabel();
@@ -143,7 +146,8 @@ public class Main extends javax.swing.JFrame {
                                     .addComponent(SearchGenreTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                                     .addComponent(SearchDeveloperTextField)
                                     .addComponent(SearchPublisherTextField))))
-                        .addGap(0, 142, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(SearchYearOfReleaseErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         SearchTabPanelLayout.setVerticalGroup(
@@ -160,7 +164,8 @@ public class Main extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(SearchTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SearchYearOfReleaseLabel)
-                    .addComponent(SearchYearOfReleaseTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(SearchYearOfReleaseTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SearchYearOfReleaseErrorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(SearchTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SearchGenreLabel)
@@ -592,7 +597,7 @@ public class Main extends javax.swing.JFrame {
         } else {
             int year;
             try {
-                year = Integer.parseInt(PlatformYearOfReleaseTextField.getText());
+                year = Integer.parseInt(yearOfRelease);
             } catch (NumberFormatException e) {
                 PlatformYearOfReleaseErrorLabel.setText("Error: Year must be 4 numbers");
                 return;
@@ -654,7 +659,7 @@ public class Main extends javax.swing.JFrame {
         } else {
             int year;
             try {
-                year = Integer.parseInt(GameYearOfReleaseTextField.getText());
+                year = Integer.parseInt(yearOfRelease);
             } catch (NumberFormatException e) {
                 GameYearOfReleaseErrorLabel.setText("Error: Year must be 4 numbers");
                 return;
@@ -675,10 +680,28 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         String title = SearchTitleTextField.getText().trim();
         String platform = SearchPlatformTextField.getText().trim();
-        String yearOfRelease = SearchYearOfReleaseTextField.getText().trim();
         String genre = SearchGenreTextField.getText().trim();
         String developer = SearchDeveloperTextField.getText().trim();
         String publisher = SearchPublisherTextField.getText().trim();
+        String yearOfRelease = SearchYearOfReleaseTextField.getText().trim();
+        
+        if (yearOfRelease.equals("")) {
+            // do nothing
+        } else if (yearOfRelease.length() != 4) {
+            SearchYearOfReleaseErrorLabel.setText("Error: Year must be 4 numbers");
+            return;
+        } else {
+            int year;
+            try {
+                year = Integer.parseInt(yearOfRelease);
+            } catch (NumberFormatException e) {
+                GameYearOfReleaseErrorLabel.setText("Error: Year must be 4 numbers");
+                return;
+            }
+        }
+        
+        DefaultTableModel model = controller.searchForGame(title, platform, developer, publisher, yearOfRelease, genre);
+        new ResultsFrame(model).setVisible(true);
     }//GEN-LAST:event_SearchButtonActionPerformed
 
     /**
@@ -783,6 +806,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel SearchTabPanel;
     private javax.swing.JLabel SearchTitleLabel;
     private javax.swing.JTextField SearchTitleTextField;
+    private javax.swing.JLabel SearchYearOfReleaseErrorLabel;
     private javax.swing.JLabel SearchYearOfReleaseLabel;
     private javax.swing.JTextField SearchYearOfReleaseTextField;
     private javax.swing.JLabel TitleLabel;

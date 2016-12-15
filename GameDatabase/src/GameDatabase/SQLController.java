@@ -75,7 +75,7 @@ public class SQLController {
         return message;
     }
 
-    public JTable searchForGame(String title, String platform, String developer,
+    public DefaultTableModel searchForGame(String title, String platform, String developer,
             String publisher, String yearOfRelease, String genre) {
         boolean hasTitle, hasPlatform, hasDeveloper, hasPublisher, hasYOR, hasGenre;
         boolean gameTable;
@@ -160,7 +160,7 @@ public class SQLController {
         
         try {
             ResultSet rs = driver.query(sql);
-            return new JTable(buildTableModel(rs));
+            return buildTableModel(rs);
         } catch (SQLException e){
             System.out.println(e.getMessage());
             return null;
@@ -216,17 +216,17 @@ public class SQLController {
             rs = driver.query(sql);
             rs.next();
             return new Record(rs.getString("title"), rs.getString("platform"), rs.getString("developer"), 
-                rs.getString("publisher"), rs.getString("yearofrelease"), rs.getString("genre"));
+                rs.getString("publisher"), Integer.toString(rs.getInt("yearofrelease")), rs.getString("genre"));
         } catch (SQLException e){
             System.out.println(e.getMessage());
             return null;
         }
     }
     
-    public JTable getAll() throws SQLException{
+    public DefaultTableModel getAll() throws SQLException{
         ResultSet rs = driver.query("select title, platform from game");
         
-        return new JTable(buildTableModel(rs));
+        return buildTableModel(rs);
     }
     
     /**
