@@ -30,10 +30,14 @@ public class Main extends javax.swing.JFrame {
         SearchYearOfReleaseTextField = new javax.swing.JTextField();
         SearchPlatformTextField = new javax.swing.JTextField();
         SearchTitleTextField = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        SearchGenreTextField = new javax.swing.JTextField();
         SearchMessageLabel = new javax.swing.JLabel();
         SearchButton = new javax.swing.JButton();
         ExitButton = new javax.swing.JButton();
+        SearchDeveloperLabel = new javax.swing.JLabel();
+        SearchDeveloperTextField = new javax.swing.JTextField();
+        SearchPublisherLabel = new javax.swing.JLabel();
+        SearchPublisherTextField = new javax.swing.JTextField();
         AddCompanyPanel = new javax.swing.JPanel();
         CompanyNameLabel = new javax.swing.JLabel();
         CompanyLocationLabel = new javax.swing.JLabel();
@@ -100,6 +104,10 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        SearchDeveloperLabel.setText("Developer");
+
+        SearchPublisherLabel.setText("Publisher");
+
         javax.swing.GroupLayout SearchTabPanelLayout = new javax.swing.GroupLayout(SearchTabPanel);
         SearchTabPanel.setLayout(SearchTabPanelLayout);
         SearchTabPanelLayout.setHorizontalGroup(
@@ -119,13 +127,17 @@ public class Main extends javax.swing.JFrame {
                                     .addComponent(SearchYearOfReleaseLabel)
                                     .addComponent(SearchPlatformLabel)
                                     .addComponent(SearchTitleLabel)
-                                    .addComponent(SearchGenreLabel))
+                                    .addComponent(SearchGenreLabel)
+                                    .addComponent(SearchDeveloperLabel)
+                                    .addComponent(SearchPublisherLabel))
                                 .addGap(18, 18, 18)
                                 .addGroup(SearchTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(SearchYearOfReleaseTextField, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(SearchPlatformTextField, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(SearchTitleTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))))
+                                    .addComponent(SearchGenreTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(SearchDeveloperTextField)
+                                    .addComponent(SearchPublisherTextField))))
                         .addGap(0, 142, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -147,12 +159,20 @@ public class Main extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(SearchTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SearchGenreLabel)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
+                    .addComponent(SearchGenreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(SearchTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SearchDeveloperLabel)
+                    .addComponent(SearchDeveloperTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(SearchTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SearchPublisherLabel)
+                    .addComponent(SearchPublisherTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addGroup(SearchTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SearchButton)
                     .addComponent(ExitButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                .addGap(53, 53, 53)
                 .addComponent(SearchMessageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -403,7 +423,7 @@ public class Main extends javax.swing.JFrame {
                                     .addComponent(PlatformLabel))
                                 .addGap(67, 67, 67)
                                 .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(GamePlatformTextField)
+                                    .addComponent(GamePlatformTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
                                     .addComponent(GameTitleTextField))))
                         .addGap(18, 18, 18)
                         .addGroup(AddGameTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -736,10 +756,15 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel PlatformYearOfReleaseLabel;
     private javax.swing.JTextField PlatformYearOfReleaseTextField;
     private javax.swing.JButton SearchButton;
+    private javax.swing.JLabel SearchDeveloperLabel;
+    private javax.swing.JTextField SearchDeveloperTextField;
     private javax.swing.JLabel SearchGenreLabel;
+    private javax.swing.JTextField SearchGenreTextField;
     private javax.swing.JLabel SearchMessageLabel;
     private javax.swing.JLabel SearchPlatformLabel;
     private javax.swing.JTextField SearchPlatformTextField;
+    private javax.swing.JLabel SearchPublisherLabel;
+    private javax.swing.JTextField SearchPublisherTextField;
     private javax.swing.JPanel SearchTabPanel;
     private javax.swing.JLabel SearchTitleLabel;
     private javax.swing.JTextField SearchTitleTextField;
@@ -749,6 +774,5 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel YearOfReleaseLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }

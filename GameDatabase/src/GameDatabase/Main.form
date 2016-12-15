@@ -64,7 +64,7 @@
                           <Component id="SearchMessageLabel" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
                                       <Component id="SearchButton" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="ExitButton" min="-2" max="-2" attributes="0"/>
@@ -75,13 +75,17 @@
                                           <Component id="SearchPlatformLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="SearchTitleLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="SearchGenreLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="SearchDeveloperLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="SearchPublisherLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                           <Component id="SearchYearOfReleaseTextField" alignment="0" max="32767" attributes="0"/>
                                           <Component id="SearchPlatformTextField" alignment="0" max="32767" attributes="0"/>
                                           <Component id="SearchTitleTextField" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jTextField4" pref="200" max="32767" attributes="0"/>
+                                          <Component id="SearchGenreTextField" pref="200" max="32767" attributes="0"/>
+                                          <Component id="SearchDeveloperTextField" max="32767" attributes="0"/>
+                                          <Component id="SearchPublisherTextField" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -113,14 +117,24 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="SearchGenreLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="SearchGenreTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="SearchDeveloperLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="SearchDeveloperTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="SearchPublisherLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="SearchPublisherTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="25" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="SearchButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="ExitButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="93" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                       <Component id="SearchMessageLabel" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -154,7 +168,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="SearchTitleTextField">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField4">
+            <Component class="javax.swing.JTextField" name="SearchGenreTextField">
             </Component>
             <Component class="javax.swing.JLabel" name="SearchMessageLabel">
             </Component>
@@ -170,6 +184,20 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ExitButtonActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="SearchDeveloperLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Developer"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="SearchDeveloperTextField">
+            </Component>
+            <Component class="javax.swing.JLabel" name="SearchPublisherLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Publisher"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="SearchPublisherTextField">
             </Component>
           </SubComponents>
         </Container>
@@ -481,7 +509,7 @@
                                       </Group>
                                       <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="GamePlatformTextField" max="32767" attributes="0"/>
+                                          <Component id="GamePlatformTextField" pref="187" max="32767" attributes="0"/>
                                           <Component id="GameTitleTextField" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
