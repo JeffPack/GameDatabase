@@ -96,6 +96,11 @@ public class Main extends javax.swing.JFrame {
         SearchGenreLabel.setText("Genre:");
 
         SearchButton.setText("Search");
+        SearchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchButtonActionPerformed(evt);
+            }
+        });
 
         ExitButton.setText("Exit");
         ExitButton.addActionListener(new java.awt.event.ActionListener() {
@@ -104,9 +109,9 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        SearchDeveloperLabel.setText("Developer");
+        SearchDeveloperLabel.setText("Developer:");
 
-        SearchPublisherLabel.setText("Publisher");
+        SearchPublisherLabel.setText("Publisher:");
 
         javax.swing.GroupLayout SearchTabPanelLayout = new javax.swing.GroupLayout(SearchTabPanel);
         SearchTabPanel.setLayout(SearchTabPanelLayout);
@@ -537,8 +542,8 @@ public class Main extends javax.swing.JFrame {
 
     private void AddCompanyConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddCompanyConfirmButtonActionPerformed
         // TODO add your handling code here:
-        String name = CompanyNameTextField.getText();
-        String location = CompanyLocationTextField.getText();
+        String name = CompanyNameTextField.getText().trim();
+        String location = CompanyLocationTextField.getText().trim();
 
         if (name.equals("")) {
             CompanyNameErrorLabel.setText("required field");
@@ -572,13 +577,13 @@ public class Main extends javax.swing.JFrame {
 
     private void AddPlatformConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddPlatformConfirmButtonActionPerformed
         // TODO add your handling code here:
-        String name = PlatformNameTextField.getText();
+        String name = PlatformNameTextField.getText().trim();
 
         if (name.equals("")) {
             PlatformNameErrorLabel.setText("required field");
         }
 
-        String yearOfRelease = PlatformYearOfReleaseTextField.getText();
+        String yearOfRelease = PlatformYearOfReleaseTextField.getText().trim();
         if (yearOfRelease.equals("")) {
             yearOfRelease = "NULL";
         } else if (yearOfRelease.length() != 4) {
@@ -626,7 +631,7 @@ public class Main extends javax.swing.JFrame {
 
     private void AddGameConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddGameConfirmButtonActionPerformed
         // TODO add your handling code here:
-        String name = GameTitleTextField.getText();
+        String name = GameTitleTextField.getText().trim();
         if (name.equals("")) {
             GameTitleErrorLabel.setText("required field");
         }
@@ -636,11 +641,11 @@ public class Main extends javax.swing.JFrame {
             GamePlatformErrorLabel.setText("required field");
         }
 
-        String genre = GameGenreTextField.getText();
-        String developer = GameDeveloperTextField.getText();
-        String publisher = GamePublisherTextField.getText();
+        String genre = GameGenreTextField.getText().trim();
+        String developer = GameDeveloperTextField.getText().trim();
+        String publisher = GamePublisherTextField.getText().trim();
 
-        String yearOfRelease = GameYearOfReleaseTextField.getText();
+        String yearOfRelease = GameYearOfReleaseTextField.getText().trim();
         if (yearOfRelease.equals("")) {
             yearOfRelease = "NULL";
         } else if (yearOfRelease.length() != 4) {
@@ -665,6 +670,16 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_ExitButtonActionPerformed
+
+    private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButtonActionPerformed
+        // TODO add your handling code here:
+        String title = SearchTitleTextField.getText().trim();
+        String platform = SearchPlatformTextField.getText().trim();
+        String yearOfRelease = SearchYearOfReleaseTextField.getText().trim();
+        String genre = SearchGenreTextField.getText().trim();
+        String developer = SearchDeveloperTextField.getText().trim();
+        String publisher = SearchPublisherTextField.getText().trim();
+    }//GEN-LAST:event_SearchButtonActionPerformed
 
     /**
      * @param args the command line arguments
