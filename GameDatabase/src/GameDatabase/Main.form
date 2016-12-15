@@ -225,17 +225,14 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="SearchCompanyMessageLabel" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="SearchCompanyLocationLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="SearchCompanyNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="SearchCompanyLocationLabel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="SearchCompanyLocationTextField" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="SearchCompanyNameLabel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="36" max="32767" attributes="0"/>
-                                      <Component id="SearchCompanyNameTextField" min="-2" pref="200" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="SearchCompanyNameTextField" max="32767" attributes="0"/>
+                                  <Component id="SearchCompanyLocationTextField" pref="205" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="192" max="-2" attributes="0"/>
                           </Group>
@@ -268,7 +265,7 @@
                           <Component id="SearchCompanyButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="SearchCompanyExitButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="220" max="32767" attributes="0"/>
+                      <EmptySpace pref="226" max="32767" attributes="0"/>
                       <Component id="SearchCompanyMessageLabel" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -296,6 +293,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Search"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchCompanyButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="SearchCompanyExitButton">
               <Properties>

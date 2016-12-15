@@ -108,77 +108,123 @@ public class SQLController {
             gameTable = true;
         }
 
-        if (!hasTitle && !hasPlatform && !hasDeveloper && !hasPublisher && !hasYOR && !hasGenre)
-        {
+        if (!hasTitle && !hasPlatform && !hasDeveloper && !hasPublisher && !hasYOR && !hasGenre) {
             try {
                 return getAll();
-            } catch (SQLException e){
+            } catch (SQLException e) {
                 System.out.println(e.getMessage());
                 return null;
             }
         }
-        
+
         String sql = "select title, platform ";
-        
-        if (!gameTable && !hasPublisher && hasDeveloper){
+
+        if (!gameTable && !hasPublisher && hasDeveloper) {
             sql += "from developedby where company like '%" + developer + "%'";
-        } else if (!gameTable && !hasDeveloper && hasPublisher){
+        } else if (!gameTable && !hasDeveloper && hasPublisher) {
             sql += "from publishedby where company like '%" + publisher + "%'";
         } else if (!gameTable && hasDeveloper && hasPublisher) {
-            sql += "from developedby d join publishedby p where d.company like '%" +
-                    developer + "%' and p.company like '%" + publisher + "%'";
+            sql += "from developedby d join publishedby p where d.company like '%"
+                    + developer + "%' and p.company like '%" + publisher + "%'";
         } else if (gameTable) {
             boolean addAnd = false;
             sql += "from game where ";
-            if (hasTitle){
+            if (hasTitle) {
                 sql += "title like '%" + title + "%' ";
                 addAnd = true;
             }
-            if (hasPlatform){
-                if (addAnd)
+            if (hasPlatform) {
+                if (addAnd) {
                     sql += "and ";
+                }
                 sql += "platform like '%" + platform + "%' ";
                 addAnd = true;
             }
             if (hasYOR) {
-                if (addAnd)
+                if (addAnd) {
                     sql += "and ";
+                }
                 sql += "yearofrelease = " + yearOfRelease + " ";
                 addAnd = true;
             }
-            if (hasGenre){
-                if (addAnd)
+            if (hasGenre) {
+                if (addAnd) {
                     sql += "and ";
+                }
                 sql += "genre like '%" + genre + "%' ";
             }
-            if (hasDeveloper)
+            if (hasDeveloper) {
                 sql += "intersect select title, platform from developer where company like '%" + developer + "%' ";
-            if (hasPublisher)
+            }
+            if (hasPublisher) {
                 sql += "intersect select title, platform from publisher where company like '%" + publisher + "%' ";
+            }
         }
+
+        DefaultTableModel model;
+        try {
+            model = driver.query(sql);
+        } catch (SQLException e) {
+            return null;
+        }
+
+        return model;
+
+    }
+
+    public DefaultTableModel searchByCompany(String companyName, String location) {
+        if (companyName.equals("") && location.equals("")) {
+            try {
+                return getAll();
+            } catch (SQLException e) {
+                return null;
+            }
+        }
+        
+        String sql = "select distinct title, platform from " + 
+                "developedby where " +
+                "company in "; 
+                
+        String companySelect = "(select name from company where ";
+        boolean addAnd = false;
+        if (!companyName.equals("")) {
+            addAnd = true;
+            companySelect += "name like '%" + companyName + "%'";
+        }
+
+        if (!location.equals("")) {
+            if (addAnd) sql += " and ";
+            companySelect += "location like '%" + location + "%'";
+        }
+        
+        companySelect += ") ";
+        
+        sql += companySelect + " union select distinct title, platform from " + 
+                "publishedby where company in " + companySelect;
         
         DefaultTableModel model;
         try {
             model = driver.query(sql);
-        } catch (SQLException e){
+        } catch (SQLException e) {
+            System.out.println(sql);
+            System.out.println(e.getMessage());
             return null;
         }
-        
+
         return model;
-        
     }
 
     public String updateGame(String title, String platform, String developer,
             String publisher, String yearOfRelease, String genre) {
-        
-        String sqlGame = "update game set yearofrelease = '" + yearOfRelease + 
-                "', genre = '" + genre + "' where title = '" + title + "' and platform = '" + 
-                platform + "'";
-        String sqlDeveloper = "update developedby set company = '" + developer + "' where title = '" + title + "' and platform = '" + 
-                platform + "'";
-        String sqlPublisher = "update publishedby set company = '" + publisher + "' where title = '" + title + "' and platform = '" + 
-                platform + "'";
-        
+
+        String sqlGame = "update game set yearofrelease = '" + yearOfRelease
+                + "', genre = '" + genre + "' where title = '" + title + "' and platform = '"
+                + platform + "'";
+        String sqlDeveloper = "update developedby set company = '" + developer + "' where title = '" + title + "' and platform = '"
+                + platform + "'";
+        String sqlPublisher = "update publishedby set company = '" + publisher + "' where title = '" + title + "' and platform = '"
+                + platform + "'";
+
         String message = driver.update(sqlGame);
         if (!message.equals("Successful update")) {
             return message;
@@ -205,34 +251,31 @@ public class SQLController {
 
         return message;
     }
-    
-    public Record getRecord(String title, String platform)
-    {
+
+    public Record getRecord(String title, String platform) {
         ResultSet rs;
-        String sql = "select game.title as title, game.platform as platform, d.company as developer, p.company as publisher, yearofrelease, genre " + 
-                "from game join developedby d on game.title = d.title and game.platform = d.platform " +
-                "join publishedby p on game.title = p.title and game.platform = p.platform " +
-                "where game.title = '" + title + "' and game.platform = '" + platform + "'";
-        
+        String sql = "select game.title as title, game.platform as platform, d.company as developer, p.company as publisher, yearofrelease, genre "
+                + "from game join developedby d on game.title = d.title and game.platform = d.platform "
+                + "join publishedby p on game.title = p.title and game.platform = p.platform "
+                + "where game.title = '" + title + "' and game.platform = '" + platform + "'";
+
         return driver.getRecord(sql);
     }
-    
-    public DefaultTableModel getAll() throws SQLException{
+
+    public DefaultTableModel getAll() throws SQLException {
         return driver.query("select title, platform from game");
     }
-    
-    public String removeRecord(String title, String platform)
-    {
+
+    public String removeRecord(String title, String platform) {
         String sqlGame = "delete from game where title = '" + title + "' and platform = '" + platform + "'";
         String sqlDevelopedBy = "delete from developedby where title = '" + title + "' and platform = '" + platform + "'";
         String sqlPublishedBy = "delete from publishedby where title = '" + title + "' and platform = '" + platform + "'";
-        
+
         String message = driver.removeRecord(sqlGame);
         message = driver.removeRecord(sqlDevelopedBy);
         message = driver.removeRecord(sqlPublishedBy);
-        
+
         return "Record removed";
     }
-    
-    
+
 }

@@ -210,6 +210,11 @@ public class Main extends javax.swing.JFrame {
         SearchCompanyLocationLabel.setText("Location:");
 
         SearchCompanyButton.setText("Search");
+        SearchCompanyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchCompanyButtonActionPerformed(evt);
+            }
+        });
 
         SearchCompanyExitButton.setText("Exit");
         SearchCompanyExitButton.addActionListener(new java.awt.event.ActionListener() {
@@ -227,15 +232,13 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(SearchCompanyMessageLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(SearchCompanyLocationLabel)
+                            .addComponent(SearchCompanyNameLabel))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(SearchCompanyLocationLabel)
-                                .addGap(18, 18, 18)
-                                .addComponent(SearchCompanyLocationTextField))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(SearchCompanyNameLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                                .addComponent(SearchCompanyNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(SearchCompanyNameTextField)
+                            .addComponent(SearchCompanyLocationTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE))
                         .addGap(192, 192, 192))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(SearchCompanyButton)
@@ -259,7 +262,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SearchCompanyButton)
                     .addComponent(SearchCompanyExitButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 220, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 226, Short.MAX_VALUE)
                 .addComponent(SearchCompanyMessageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -851,6 +854,15 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_SearchPlatformExitButtonActionPerformed
+
+    private void SearchCompanyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchCompanyButtonActionPerformed
+        // TODO add your handling code here:
+        String companyName = SearchCompanyNameTextField.getText().trim();
+        String location = SearchCompanyLocationTextField.getText().trim();
+        
+        DefaultTableModel model = controller.searchByCompany(companyName, location);
+        new ResultsFrame(controller, model).setVisible(true);
+    }//GEN-LAST:event_SearchCompanyButtonActionPerformed
 
     /**
      * @param args the command line arguments
