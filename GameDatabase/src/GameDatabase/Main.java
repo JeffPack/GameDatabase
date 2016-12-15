@@ -3,7 +3,7 @@ package GameDatabase;
 public class Main extends javax.swing.JFrame {
 
     SQLController controller;
-    
+
     /**
      * Creates new form TabedMenuFrame
      */
@@ -519,20 +519,20 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         String name = CompanyNameTextField.getText();
         String location = CompanyLocationTextField.getText();
-        
-        if (name.equals(""))
+
+        if (name.equals("")) {
             CompanyNameErrorLabel.setText("required field");
-        
-        if (location.equals(""))
+        }
+
+        if (location.equals("")) {
             CompanyLocationErrorLabel.setText("required field");
-        
-        if (!name.equals("") && !location.equals(""))
-        {
+        }
+
+        if (!name.equals("") && !location.equals("")) {
             String message = controller.addCompany(name, location);
             AddCompanyMessageLabel.setText(message);
 
-            if (message.equals("Successful entry"))
-            {
+            if (message.equals("Successful entry")) {
                 CompanyNameTextField.setText("");
                 CompanyLocationTextField.setText("");
                 CompanyNameErrorLabel.setText("");
@@ -553,25 +553,32 @@ public class Main extends javax.swing.JFrame {
     private void AddPlatformConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddPlatformConfirmButtonActionPerformed
         // TODO add your handling code here:
         String name = PlatformNameTextField.getText();
-        
-        if (name.equals(""))
+
+        if (name.equals("")) {
             PlatformNameErrorLabel.setText("required field");
-        
-        int year;
-        try{
-            year = Integer.parseInt(PlatformYearOfReleaseTextField.getText());
-        } catch (NumberFormatException e){
-            PlatformYearOfReleaseErrorLabel.setText(e.getMessage());
-            return;
         }
-        
-        if (!name.equals(""))
-        {
-            String message = controller.addPlatform(name, year);
+
+        String yearOfRelease = PlatformYearOfReleaseTextField.getText();
+        if (yearOfRelease.equals("")) {
+            yearOfRelease = "NULL";
+        } else if (yearOfRelease.length() != 4) {
+            PlatformYearOfReleaseErrorLabel.setText("Error: Year must be 4 numbers");
+            return;
+        } else {
+            int year;
+            try {
+                year = Integer.parseInt(PlatformYearOfReleaseTextField.getText());
+            } catch (NumberFormatException e) {
+                PlatformYearOfReleaseErrorLabel.setText("Error: Year must be 4 numbers");
+                return;
+            }
+        }
+
+        if (!name.equals("")) {
+            String message = controller.addPlatform(name, yearOfRelease);
             AddPlatformMessageLabel.setText(message);
-            
-            if (message.equals("Successful entry"))
-            {
+
+            if (message.equals("Successful entry")) {
                 PlatformNameTextField.setText("");
                 PlatformYearOfReleaseTextField.setText("");
                 PlatformNameErrorLabel.setText("");
@@ -600,28 +607,37 @@ public class Main extends javax.swing.JFrame {
     private void AddGameConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddGameConfirmButtonActionPerformed
         // TODO add your handling code here:
         String name = GameTitleTextField.getText();
-        if (name.equals(""))
+        if (name.equals("")) {
             GameTitleErrorLabel.setText("required field");
-        
+        }
+
         String platform = GameTitleTextField.getText();
-        if (platform.equals(""))
+        if (platform.equals("")) {
             GamePlatformErrorLabel.setText("required field");
-        
+        }
+
         String genre = GameGenreTextField.getText();
         String developer = GameDeveloperTextField.getText();
         String publisher = GamePublisherTextField.getText();
-        
-        int year;
-        try {
-            year = Integer.parseInt(GameYearOfReleaseTextField.getText());
-        } catch (NumberFormatException e){
-            GameYearOfReleaseErrorLabel.setText(e.getMessage());
+
+        String yearOfRelease = GameYearOfReleaseTextField.getText();
+        if (yearOfRelease.equals("")) {
+            yearOfRelease = "NULL";
+        } else if (yearOfRelease.length() != 4) {
+            GameYearOfReleaseErrorLabel.setText("Error: Year must be 4 numbers");
             return;
+        } else {
+            int year;
+            try {
+                year = Integer.parseInt(GameYearOfReleaseTextField.getText());
+            } catch (NumberFormatException e) {
+                GameYearOfReleaseErrorLabel.setText("Error: Year must be 4 numbers");
+                return;
+            }
         }
-        
-        if (!name.equals("") && !platform.equals(""))
-        {
-            String message = controller.addGame(name, platform, developer, publisher, year, genre);
+
+        if (!name.equals("") && !platform.equals("")) {
+            String message = controller.addGame(name, platform, developer, publisher, yearOfRelease, genre);
         }
     }//GEN-LAST:event_AddGameConfirmButtonActionPerformed
 
