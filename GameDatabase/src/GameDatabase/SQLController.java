@@ -9,7 +9,6 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.Vector;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -122,23 +121,23 @@ public class SQLController {
         String sql = "select title, platform ";
         
         if (!gameTable && !hasPublisher && hasDeveloper){
-            sql += "from developedby where company like '" + developer + "'";
+            sql += "from developedby where company like '%" + developer + "%'";
         } else if (!gameTable && !hasDeveloper && hasPublisher){
-            sql += "from publishedby where company like '" + publisher + "'";
+            sql += "from publishedby where company like '%" + publisher + "%'";
         } else if (!gameTable && hasDeveloper && hasPublisher) {
-            sql += "from developedby d join publishedby p where d.company like '" +
-                    developer + "' and p.company like '" + publisher + "'";
+            sql += "from developedby d join publishedby p where d.company like '%" +
+                    developer + "%' and p.company like '%" + publisher + "%'";
         } else if (gameTable) {
             boolean addAnd = false;
             sql += "from game where ";
             if (hasTitle){
-                sql += "title like '" + title + "' ";
+                sql += "title like '%" + title + "%' ";
                 addAnd = true;
             }
             if (hasPlatform){
                 if (addAnd)
                     sql += "and ";
-                sql += "platform like '" + platform + "' ";
+                sql += "platform like '%" + platform + "%' ";
                 addAnd = true;
             }
             if (hasYOR) {
@@ -150,12 +149,12 @@ public class SQLController {
             if (hasGenre){
                 if (addAnd)
                     sql += "and ";
-                sql += "genre like '" + genre + "' ";
+                sql += "genre like '%" + genre + "%' ";
             }
             if (hasDeveloper)
-                sql += "intersect select title, platform from developer where company like '" + developer + "' ";
+                sql += "intersect select title, platform from developer where company like '%" + developer + "%' ";
             if (hasPublisher)
-                sql += "intersect select title, platform from publisher where company like '" + publisher + "' ";
+                sql += "intersect select title, platform from publisher where company like '%" + publisher + "%' ";
         }
         
         try {
@@ -211,7 +210,7 @@ public class SQLController {
         ResultSet rs;
         String sql = "select title, platform, developer, publisher, yearofrelease, genre " + 
                 "from game join developedby join publishedby " +
-                "where title like '" + title + "' and platform like '" + platform + "'";
+                "where title like '%" + title + "%' and platform like '%" + platform + "%'";
         try {
             rs = driver.query(sql);
             rs.next();

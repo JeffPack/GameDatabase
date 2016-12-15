@@ -641,7 +641,7 @@ public class Main extends javax.swing.JFrame {
             GameTitleErrorLabel.setText("required field");
         }
 
-        String platform = GameTitleTextField.getText();
+        String platform = GamePlatformTextField.getText();
         if (platform.equals("")) {
             GamePlatformErrorLabel.setText("required field");
         }

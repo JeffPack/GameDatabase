@@ -20,6 +20,7 @@ public class ResultsFrame extends javax.swing.JFrame {
     public ResultsFrame(DefaultTableModel table) {
         initComponents();
         ResultsTablePanel.setModel(table);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     }
 
     /**
