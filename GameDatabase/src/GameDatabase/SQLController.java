@@ -257,7 +257,14 @@ public class SQLController {
             }
             data.add(vector);
         }
-
-        return new DefaultTableModel(data, columnNames);
+        
+        DefaultTableModel model = new DefaultTableModel(data, columnNames) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        
+        return model;
     }
 }

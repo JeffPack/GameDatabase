@@ -48,6 +48,11 @@ public class ResultsFrame extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        ResultsTablePanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ResultsTablePanelMouseClicked(evt);
+            }
+        });
         ResultsScrollPanel.setViewportView(ResultsTablePanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -56,8 +61,8 @@ public class ResultsFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(ResultsScrollPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(ResultsScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -69,6 +74,15 @@ public class ResultsFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ResultsTablePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResultsTablePanelMouseClicked
+        // TODO add your handling code here:
+        if (ResultsTablePanel.isEditing())
+            ResultsTablePanel.getCellEditor().stopCellEditing();
+        
+        if (evt.getClickCount() == 2)
+            System.out.println("double clicked");
+    }//GEN-LAST:event_ResultsTablePanelMouseClicked
 
     
 
