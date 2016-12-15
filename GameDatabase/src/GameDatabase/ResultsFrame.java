@@ -19,6 +19,7 @@ public class ResultsFrame extends javax.swing.JFrame {
      */
     public ResultsFrame(DefaultTableModel table) {
         initComponents();
+        ResultsTablePanel.setModel(table);
     }
 
     /**
