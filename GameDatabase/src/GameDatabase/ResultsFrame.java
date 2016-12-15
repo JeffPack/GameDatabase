@@ -13,12 +13,15 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ResultsFrame extends javax.swing.JFrame {
 
+    SQLController controller;
+    
     /**
      * Creates new form ResultsFrame
      * @param table
      */
-    public ResultsFrame(DefaultTableModel table) {
+    public ResultsFrame(SQLController controller, DefaultTableModel table) {
         initComponents();
+        this.controller = controller;
         ResultsTablePanel.setModel(table);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     }
@@ -77,11 +80,13 @@ public class ResultsFrame extends javax.swing.JFrame {
 
     private void ResultsTablePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResultsTablePanelMouseClicked
         // TODO add your handling code here:
-        if (ResultsTablePanel.isEditing())
-            ResultsTablePanel.getCellEditor().stopCellEditing();
-        
-        if (evt.getClickCount() == 2)
-            System.out.println("double clicked");
+        if (evt.getClickCount() == 2) {
+            int row = ResultsTablePanel.getSelectedRow();
+            String title = ResultsTablePanel.getValueAt(row, 0).toString();
+            String platform = ResultsTablePanel.getValueAt(row, 1).toString();
+            Record record = controller.getRecord(title, platform);
+            new IndividualResultFrame(controller, record).setVisible(true);
+        }
     }//GEN-LAST:event_ResultsTablePanelMouseClicked
 
     

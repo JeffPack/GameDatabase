@@ -31,31 +31,29 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="IndividualResultsYearOfReleaseLabel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="IndividualResultsYearOfReleaseTextField" min="-2" pref="200" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="IndividualResultsTitleLabel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
-                                  <Component id="IndividualResultsTitleTextField" min="-2" pref="200" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="IndividualResultsPlatformLabel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-                                  <Component id="IndividualResultsPlatformTextField" min="-2" pref="200" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="IndividualResultsGenreLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="IndividualResultsDeveloperLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="IndividualResultsPublisherLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="IndividualResultsYearOfReleaseLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="IndividualResultsGenreTextField" max="32767" attributes="0"/>
-                                      <Component id="IndividualResultsDeveloperTextField" max="32767" attributes="0"/>
-                                      <Component id="IndividualResultsPublisherTextField" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="ResultDeveloperTextField" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="ResultGenreTextField" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="ResultYearOfReleaseTextField" max="32767" attributes="0"/>
+                                      <Component id="ResultPublisherTextField" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="IndividualResultsPlatformLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="IndividualResultsTitleLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="ResultTitleTextField" min="-2" pref="209" max="-2" attributes="0"/>
+                                      <Component id="ResultPlatformTextField" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -78,32 +76,32 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="IndividualResultsTitleLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="IndividualResultsTitleTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ResultTitleTextField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="IndividualResultsPlatformLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="IndividualResultsPlatformTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ResultPlatformTextField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="IndividualResultsYearOfReleaseLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="IndividualResultsYearOfReleaseTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ResultYearOfReleaseTextField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="IndividualResultsGenreLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="IndividualResultsGenreTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ResultGenreTextField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="IndividualResultsDeveloperLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="IndividualResultsDeveloperTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ResultDeveloperTextField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="IndividualResultsPublisherLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="IndividualResultsPublisherTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ResultPublisherTextField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="67" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -138,13 +136,13 @@
         <Property name="text" type="java.lang.String" value="Genre:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="IndividualResultsYearOfReleaseTextField">
+    <Component class="javax.swing.JTextField" name="ResultYearOfReleaseTextField">
     </Component>
-    <Component class="javax.swing.JTextField" name="IndividualResultsPlatformTextField">
+    <Component class="javax.swing.JTextField" name="ResultPlatformTextField">
     </Component>
-    <Component class="javax.swing.JTextField" name="IndividualResultsTitleTextField">
+    <Component class="javax.swing.JTextField" name="ResultTitleTextField">
     </Component>
-    <Component class="javax.swing.JTextField" name="IndividualResultsGenreTextField">
+    <Component class="javax.swing.JTextField" name="ResultGenreTextField">
     </Component>
     <Component class="javax.swing.JLabel" name="IndividualResultsMessagelabel">
     </Component>
@@ -171,9 +169,9 @@
         <Property name="text" type="java.lang.String" value="Publisher:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="IndividualResultsDeveloperTextField">
+    <Component class="javax.swing.JTextField" name="ResultDeveloperTextField">
     </Component>
-    <Component class="javax.swing.JTextField" name="IndividualResultsPublisherTextField">
+    <Component class="javax.swing.JTextField" name="ResultPublisherTextField">
     </Component>
   </SubComponents>
 </Form>

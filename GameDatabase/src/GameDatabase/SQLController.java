@@ -208,9 +208,10 @@ public class SQLController {
     public Record getRecord(String title, String platform)
     {
         ResultSet rs;
-        String sql = "select title, platform, developer, publisher, yearofrelease, genre " + 
-                "from game join developedby join publishedby " +
-                "where title like '%" + title + "%' and platform like '%" + platform + "%'";
+        String sql = "select game.title as title, game.platform as platform, d.company as developer, p.company as publisher, yearofrelease, genre " + 
+                "from game join developedby d on game.title = d.title and game.platform = d.platform " +
+                "join publishedby p on game.title = p.title and game.platform = p.platform " +
+                "where game.title = '" + title + "' and game.platform = '" + platform + "'";
         try {
             rs = driver.query(sql);
             rs.next();

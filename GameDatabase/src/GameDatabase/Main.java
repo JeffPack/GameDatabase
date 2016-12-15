@@ -668,6 +668,7 @@ public class Main extends javax.swing.JFrame {
 
         if (!name.equals("") && !platform.equals("")) {
             String message = controller.addGame(name, platform, developer, publisher, yearOfRelease, genre);
+            AddGameMessageLabel.setText(message);
         }
     }//GEN-LAST:event_AddGameConfirmButtonActionPerformed
 
@@ -701,7 +702,7 @@ public class Main extends javax.swing.JFrame {
         }
         
         DefaultTableModel model = controller.searchForGame(title, platform, developer, publisher, yearOfRelease, genre);
-        new ResultsFrame(model).setVisible(true);
+        new ResultsFrame(controller, model).setVisible(true);
     }//GEN-LAST:event_SearchButtonActionPerformed
 
     /**
