@@ -5,6 +5,8 @@
  */
 package GameDatabase;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Chris
@@ -12,13 +14,15 @@ package GameDatabase;
 public class IndividualResultFrame extends javax.swing.JFrame {
 
     SQLController controller;
+    ResultsFrame results;
     
     /**
      * Creates new form IndividualResultFrame
      */
-    public IndividualResultFrame(SQLController controller, Record record) {
+    public IndividualResultFrame(SQLController controller, Record record, ResultsFrame results) {
         initComponents();
         this.controller = controller;
+        this.results = results;
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         if (record == null)
             System.out.println("record = null");
@@ -47,13 +51,15 @@ public class IndividualResultFrame extends javax.swing.JFrame {
         ResultPlatformTextField = new javax.swing.JTextField();
         ResultTitleTextField = new javax.swing.JTextField();
         ResultGenreTextField = new javax.swing.JTextField();
-        IndividualResultsMessagelabel = new javax.swing.JLabel();
+        ResultMessageLabel = new javax.swing.JLabel();
         IndividualResultsUpdateButton = new javax.swing.JButton();
-        IndividialResultsCancelButton = new javax.swing.JButton();
         IndividualResultsDeveloperLabel = new javax.swing.JLabel();
         IndividualResultsPublisherLabel = new javax.swing.JLabel();
         ResultDeveloperTextField = new javax.swing.JTextField();
         ResultPublisherTextField = new javax.swing.JTextField();
+        ResultYearOfReleaseErrorLabel = new javax.swing.JLabel();
+        ResultOKButton = new javax.swing.JButton();
+        ResultDeleteButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,18 +71,34 @@ public class IndividualResultFrame extends javax.swing.JFrame {
 
         IndividualResultsGenreLabel.setText("Genre:");
 
-        IndividualResultsUpdateButton.setText("Update");
+        ResultPlatformTextField.setEditable(false);
 
-        IndividialResultsCancelButton.setText("Cancel");
-        IndividialResultsCancelButton.addActionListener(new java.awt.event.ActionListener() {
+        ResultTitleTextField.setEditable(false);
+
+        IndividualResultsUpdateButton.setText("Update");
+        IndividualResultsUpdateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IndividialResultsCancelButtonActionPerformed(evt);
+                IndividualResultsUpdateButtonActionPerformed(evt);
             }
         });
 
         IndividualResultsDeveloperLabel.setText("Developer:");
 
         IndividualResultsPublisherLabel.setText("Publisher:");
+
+        ResultOKButton.setText("OK");
+        ResultOKButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResultOKButtonActionPerformed(evt);
+            }
+        });
+
+        ResultDeleteButton.setText("Delete Record");
+        ResultDeleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResultDeleteButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -85,35 +107,40 @@ public class IndividualResultFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(IndividualResultsMessagelabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ResultMessageLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(IndividualResultsGenreLabel)
-                                        .addComponent(IndividualResultsDeveloperLabel)
-                                        .addComponent(IndividualResultsPublisherLabel)
-                                        .addComponent(IndividualResultsYearOfReleaseLabel))
-                                    .addGap(31, 31, 31)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(ResultDeveloperTextField, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(ResultGenreTextField, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(ResultYearOfReleaseTextField)
-                                        .addComponent(ResultPublisherTextField)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(IndividualResultsPlatformLabel)
-                                        .addComponent(IndividualResultsTitleLabel))
-                                    .addGap(67, 67, 67)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(ResultTitleTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(ResultPlatformTextField))))
+                        .addComponent(IndividualResultsUpdateButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ResultOKButton)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(IndividualResultsUpdateButton)
-                                .addGap(18, 18, 18)
-                                .addComponent(IndividialResultsCancelButton)))
-                        .addGap(0, 237, Short.MAX_VALUE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(IndividualResultsGenreLabel)
+                                    .addComponent(IndividualResultsDeveloperLabel)
+                                    .addComponent(IndividualResultsPublisherLabel)
+                                    .addComponent(IndividualResultsYearOfReleaseLabel))
+                                .addGap(31, 31, 31)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ResultDeveloperTextField, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(ResultGenreTextField, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(ResultYearOfReleaseTextField)
+                                    .addComponent(ResultPublisherTextField)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(IndividualResultsPlatformLabel)
+                                    .addComponent(IndividualResultsTitleLabel))
+                                .addGap(67, 67, 67)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ResultTitleTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ResultPlatformTextField))))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ResultYearOfReleaseErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 118, Short.MAX_VALUE)
+                                .addComponent(ResultDeleteButton)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -122,7 +149,8 @@ public class IndividualResultFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(IndividualResultsTitleLabel)
-                    .addComponent(ResultTitleTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ResultTitleTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ResultDeleteButton))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(IndividualResultsPlatformLabel)
@@ -130,7 +158,8 @@ public class IndividualResultFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(IndividualResultsYearOfReleaseLabel)
-                    .addComponent(ResultYearOfReleaseTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ResultYearOfReleaseTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ResultYearOfReleaseErrorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(IndividualResultsGenreLabel)
@@ -143,38 +172,79 @@ public class IndividualResultFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(IndividualResultsPublisherLabel)
                     .addComponent(ResultPublisherTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(IndividualResultsUpdateButton)
-                    .addComponent(IndividialResultsCancelButton))
+                    .addComponent(ResultOKButton))
                 .addGap(106, 106, 106)
-                .addComponent(IndividualResultsMessagelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ResultMessageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void IndividialResultsCancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IndividialResultsCancelButtonActionPerformed
+    private void IndividualResultsUpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IndividualResultsUpdateButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_IndividialResultsCancelButtonActionPerformed
+        String title = ResultTitleTextField.getText().trim();
+        String platform = ResultPlatformTextField.getText().trim();
+        String genre = ResultGenreTextField.getText().trim();
+        String developer = ResultDeveloperTextField.getText().trim();
+        String publisher = ResultPublisherTextField.getText().trim();
+        String yearOfRelease = ResultYearOfReleaseTextField.getText().trim();
+        
+        if (yearOfRelease.equals("")) {
+            // do nothing
+        } else if (yearOfRelease.length() != 4) {
+            ResultYearOfReleaseErrorLabel.setText("Error: Year must be 4 numbers");
+            return;
+        } else {
+            int year;
+            try {
+                year = Integer.parseInt(yearOfRelease);
+            } catch (NumberFormatException e) {
+                ResultYearOfReleaseErrorLabel.setText("Error: Year must be 4 numbers");
+                return;
+            }
+        }
+        
+        String message = controller.updateGame(title, platform, developer, publisher, yearOfRelease, genre);
+        ResultMessageLabel.setText(message);
+    }//GEN-LAST:event_IndividualResultsUpdateButtonActionPerformed
+
+    private void ResultOKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResultOKButtonActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_ResultOKButtonActionPerformed
+
+    private void ResultDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResultDeleteButtonActionPerformed
+        // TODO add your handling code here:
+        String title = ResultTitleTextField.getText().trim();
+        String platform = ResultPlatformTextField.getText().trim();
+        controller.removeRecord(title, platform);
+        JOptionPane.showMessageDialog(this, "Record removed");
+        results.dispose();
+        dispose();
+    }//GEN-LAST:event_ResultDeleteButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton IndividialResultsCancelButton;
     private javax.swing.JLabel IndividualResultsDeveloperLabel;
     private javax.swing.JLabel IndividualResultsGenreLabel;
-    private javax.swing.JLabel IndividualResultsMessagelabel;
     private javax.swing.JLabel IndividualResultsPlatformLabel;
     private javax.swing.JLabel IndividualResultsPublisherLabel;
     private javax.swing.JLabel IndividualResultsTitleLabel;
     private javax.swing.JButton IndividualResultsUpdateButton;
     private javax.swing.JLabel IndividualResultsYearOfReleaseLabel;
+    private javax.swing.JButton ResultDeleteButton;
     private javax.swing.JTextField ResultDeveloperTextField;
     private javax.swing.JTextField ResultGenreTextField;
+    private javax.swing.JLabel ResultMessageLabel;
+    private javax.swing.JButton ResultOKButton;
     private javax.swing.JTextField ResultPlatformTextField;
     private javax.swing.JTextField ResultPublisherTextField;
     private javax.swing.JTextField ResultTitleTextField;
+    private javax.swing.JLabel ResultYearOfReleaseErrorLabel;
     private javax.swing.JTextField ResultYearOfReleaseTextField;
     // End of variables declaration//GEN-END:variables
 }

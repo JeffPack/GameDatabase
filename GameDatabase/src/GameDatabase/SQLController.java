@@ -157,17 +157,18 @@ public class SQLController {
                 sql += "intersect select title, platform from publisher where company like '%" + publisher + "%' ";
         }
         
+        DefaultTableModel model;
         try {
-            ResultSet rs = driver.query(sql);
-            return buildTableModel(rs);
+            model = driver.query(sql);
         } catch (SQLException e){
-            System.out.println(e.getMessage());
             return null;
         }
         
+        return model;
+        
     }
 
-    public String UpdateGame(String title, String platform, String developer,
+    public String updateGame(String title, String platform, String developer,
             String publisher, String yearOfRelease, String genre) {
         
         String sqlGame = "update game set yearofrelease = '" + yearOfRelease + 
@@ -212,60 +213,26 @@ public class SQLController {
                 "from game join developedby d on game.title = d.title and game.platform = d.platform " +
                 "join publishedby p on game.title = p.title and game.platform = p.platform " +
                 "where game.title = '" + title + "' and game.platform = '" + platform + "'";
-        try {
-            rs = driver.query(sql);
-            rs.next();
-            return new Record(rs.getString("title"), rs.getString("platform"), rs.getString("developer"), 
-                rs.getString("publisher"), Integer.toString(rs.getInt("yearofrelease")), rs.getString("genre"));
-        } catch (SQLException e){
-            System.out.println(e.getMessage());
-            return null;
-        }
+        
+        return driver.getRecord(sql);
     }
     
     public DefaultTableModel getAll() throws SQLException{
-        ResultSet rs = driver.query("select title, platform from game");
-        
-        return buildTableModel(rs);
+        return driver.query("select title, platform from game");
     }
     
-    /**
-     * Create JTable from result set as found at 
-     * http://stackoverflow.com/questions/10620448/most-simple-code-to-populate-jtable-from-resultset
-     * by Paul Vargas 5-16-12
-     * @param rs The result set to create the table from
-     * @return DefaultTableModel
-     * @throws SQLException 
-     */
-    private static DefaultTableModel buildTableModel(ResultSet rs)
-            throws SQLException {
-
-        ResultSetMetaData metaData = rs.getMetaData();
-
-        // names of columns
-        Vector<String> columnNames = new Vector<>();
-        int columnCount = metaData.getColumnCount();
-        for (int column = 1; column <= columnCount; column++) {
-            columnNames.add(metaData.getColumnName(column));
-        }
-
-        // data of the table
-        Vector<Vector<Object>> data = new Vector<Vector<Object>>();
-        while (rs.next()) {
-            Vector<Object> vector = new Vector<Object>();
-            for (int columnIndex = 1; columnIndex <= columnCount; columnIndex++) {
-                vector.add(rs.getObject(columnIndex));
-            }
-            data.add(vector);
-        }
+    public String removeRecord(String title, String platform)
+    {
+        String sqlGame = "delete from game where title = '" + title + "' and platform = '" + platform + "'";
+        String sqlDevelopedBy = "delete from developedby where title = '" + title + "' and platform = '" + platform + "'";
+        String sqlPublishedBy = "delete from publishedby where title = '" + title + "' and platform = '" + platform + "'";
         
-        DefaultTableModel model = new DefaultTableModel(data, columnNames) {
-            @Override
-            public boolean isCellEditable(int row, int column) {
-                return false;
-            }
-        };
+        String message = driver.removeRecord(sqlGame);
+        message = driver.removeRecord(sqlDevelopedBy);
+        message = driver.removeRecord(sqlPublishedBy);
         
-        return model;
+        return "Record removed";
     }
+    
+    
 }

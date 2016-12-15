@@ -85,7 +85,7 @@ public class ResultsFrame extends javax.swing.JFrame {
             String title = ResultsTablePanel.getValueAt(row, 0).toString();
             String platform = ResultsTablePanel.getValueAt(row, 1).toString();
             Record record = controller.getRecord(title, platform);
-            new IndividualResultFrame(controller, record).setVisible(true);
+            new IndividualResultFrame(controller, record, this).setVisible(true);
         }
     }//GEN-LAST:event_ResultsTablePanelMouseClicked
 

@@ -26,44 +26,50 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="IndividualResultsMessagelabel" max="32767" attributes="0"/>
+                  <Component id="ResultMessageLabel" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="IndividualResultsGenreLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="IndividualResultsDeveloperLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="IndividualResultsPublisherLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="IndividualResultsYearOfReleaseLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="ResultDeveloperTextField" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="ResultGenreTextField" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="ResultYearOfReleaseTextField" max="32767" attributes="0"/>
-                                      <Component id="ResultPublisherTextField" max="32767" attributes="0"/>
-                                  </Group>
+                      <Component id="IndividualResultsUpdateButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="ResultOKButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="IndividualResultsGenreLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="IndividualResultsDeveloperLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="IndividualResultsPublisherLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="IndividualResultsYearOfReleaseLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="IndividualResultsPlatformLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="IndividualResultsTitleLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="ResultTitleTextField" min="-2" pref="209" max="-2" attributes="0"/>
-                                      <Component id="ResultPlatformTextField" max="32767" attributes="0"/>
-                                  </Group>
+                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="ResultDeveloperTextField" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="ResultGenreTextField" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="ResultYearOfReleaseTextField" max="32767" attributes="0"/>
+                                  <Component id="ResultPublisherTextField" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="IndividualResultsUpdateButton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="IndividialResultsCancelButton" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="IndividualResultsPlatformLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="IndividualResultsTitleLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="ResultTitleTextField" min="-2" pref="209" max="-2" attributes="0"/>
+                                  <Component id="ResultPlatformTextField" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="237" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="ResultYearOfReleaseErrorLabel" max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="118" max="32767" attributes="0"/>
+                              <Component id="ResultDeleteButton" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -77,6 +83,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="IndividualResultsTitleLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="ResultTitleTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ResultDeleteButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -87,6 +94,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="IndividualResultsYearOfReleaseLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="ResultYearOfReleaseTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ResultYearOfReleaseErrorLabel" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -103,13 +111,13 @@
                   <Component id="IndividualResultsPublisherLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="ResultPublisherTextField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="67" max="32767" attributes="0"/>
+              <EmptySpace pref="64" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="IndividualResultsUpdateButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="IndividialResultsCancelButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ResultOKButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
-              <Component id="IndividualResultsMessagelabel" min="-2" pref="20" max="-2" attributes="0"/>
+              <Component id="ResultMessageLabel" min="-2" pref="20" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -139,24 +147,25 @@
     <Component class="javax.swing.JTextField" name="ResultYearOfReleaseTextField">
     </Component>
     <Component class="javax.swing.JTextField" name="ResultPlatformTextField">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="ResultTitleTextField">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="ResultGenreTextField">
     </Component>
-    <Component class="javax.swing.JLabel" name="IndividualResultsMessagelabel">
+    <Component class="javax.swing.JLabel" name="ResultMessageLabel">
     </Component>
     <Component class="javax.swing.JButton" name="IndividualResultsUpdateButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Update"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="IndividialResultsCancelButton">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Cancel"/>
-      </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IndividialResultsCancelButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IndividualResultsUpdateButtonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="IndividualResultsDeveloperLabel">
@@ -172,6 +181,24 @@
     <Component class="javax.swing.JTextField" name="ResultDeveloperTextField">
     </Component>
     <Component class="javax.swing.JTextField" name="ResultPublisherTextField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="ResultYearOfReleaseErrorLabel">
+    </Component>
+    <Component class="javax.swing.JButton" name="ResultOKButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="OK"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ResultOKButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="ResultDeleteButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Delete Record"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ResultDeleteButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
