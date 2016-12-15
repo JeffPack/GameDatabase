@@ -41,6 +41,22 @@ public class Main extends javax.swing.JFrame {
         SearchPublisherLabel = new javax.swing.JLabel();
         SearchPublisherTextField = new javax.swing.JTextField();
         SearchYearOfReleaseErrorLabel = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        SearchCompanyNameLabel = new javax.swing.JLabel();
+        SearchCompanyLocationLabel = new javax.swing.JLabel();
+        SearchCompanyMessageLabel = new javax.swing.JLabel();
+        SearchCompanyLocationTextField = new javax.swing.JTextField();
+        SearchCompanyNameTextField = new javax.swing.JTextField();
+        SearchCompanyButton = new javax.swing.JButton();
+        SearchCompanyExitButton = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        SearchPlatformNameLabel = new javax.swing.JLabel();
+        SearchPlatformYORLabel = new javax.swing.JLabel();
+        SearchPlatformNameTextField = new javax.swing.JTextField();
+        SearchPlatformYORTextField = new javax.swing.JTextField();
+        SearchPlatformMessageLabel = new javax.swing.JLabel();
+        SearchPlatformButton = new javax.swing.JButton();
+        SearchPlatformExitButton = new javax.swing.JButton();
         AddCompanyPanel = new javax.swing.JPanel();
         CompanyNameLabel = new javax.swing.JLabel();
         CompanyLocationLabel = new javax.swing.JLabel();
@@ -178,7 +194,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(SearchTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SearchPublisherLabel)
                     .addComponent(SearchPublisherTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(SearchTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SearchButton)
                     .addComponent(ExitButton))
@@ -187,7 +203,128 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        MainMenuTabPanel.addTab("Search For Game", SearchTabPanel);
+        MainMenuTabPanel.addTab("Search by Game", SearchTabPanel);
+
+        SearchCompanyNameLabel.setText("Name:");
+
+        SearchCompanyLocationLabel.setText("Location:");
+
+        SearchCompanyButton.setText("Search");
+
+        SearchCompanyExitButton.setText("Exit");
+        SearchCompanyExitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchCompanyExitButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SearchCompanyMessageLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(SearchCompanyLocationLabel)
+                                .addGap(18, 18, 18)
+                                .addComponent(SearchCompanyLocationTextField))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(SearchCompanyNameLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                                .addComponent(SearchCompanyNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(192, 192, 192))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(SearchCompanyButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(SearchCompanyExitButton)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SearchCompanyNameLabel)
+                    .addComponent(SearchCompanyNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SearchCompanyLocationLabel)
+                    .addComponent(SearchCompanyLocationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SearchCompanyButton)
+                    .addComponent(SearchCompanyExitButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 220, Short.MAX_VALUE)
+                .addComponent(SearchCompanyMessageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        MainMenuTabPanel.addTab("Search by Company", jPanel1);
+
+        SearchPlatformNameLabel.setText("Name:");
+
+        SearchPlatformYORLabel.setText("Year of Release:");
+
+        SearchPlatformButton.setText("Search");
+
+        SearchPlatformExitButton.setText("Exit");
+        SearchPlatformExitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchPlatformExitButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SearchPlatformMessageLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(SearchPlatformYORLabel)
+                                    .addComponent(SearchPlatformNameLabel))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(SearchPlatformNameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(SearchPlatformYORTextField)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(SearchPlatformButton)
+                                .addGap(18, 18, 18)
+                                .addComponent(SearchPlatformExitButton)))
+                        .addGap(0, 142, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SearchPlatformNameLabel)
+                    .addComponent(SearchPlatformNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SearchPlatformYORLabel)
+                    .addComponent(SearchPlatformYORTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SearchPlatformButton)
+                    .addComponent(SearchPlatformExitButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 220, Short.MAX_VALUE)
+                .addComponent(SearchPlatformMessageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        MainMenuTabPanel.addTab("Search by Platform", jPanel2);
 
         CompanyNameLabel.setText("Name:");
 
@@ -249,7 +386,7 @@ public class Main extends javax.swing.JFrame {
                                     .addComponent(CompanyNameLabel))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(AddCompanyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(CompanyNameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
+                                    .addComponent(CompanyNameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
                                     .addComponent(CompanyLocationTextField))))
                         .addGap(18, 18, 18)
                         .addGroup(AddCompanyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -262,7 +399,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(AddCompanyPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(AddCompanyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(CompanyNameErrorLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                    .addComponent(CompanyNameErrorLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                     .addGroup(AddCompanyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(CompanyNameLabel)
                         .addComponent(CompanyNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -335,7 +472,7 @@ public class Main extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(AddPlatformTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(PlatformNameErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(PlatformYearOfReleaseErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)))
+                            .addComponent(PlatformYearOfReleaseErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)))
                     .addComponent(AddPlatformMessageLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -344,7 +481,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(AddPlatformTabPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(AddPlatformTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PlatformNameErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                    .addComponent(PlatformNameErrorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
                     .addGroup(AddPlatformTabPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(PlatformNameLabel)
                         .addComponent(PlatformNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -516,106 +653,9 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CompanyLocationTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompanyLocationTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CompanyLocationTextFieldActionPerformed
-
-    private void CompanyNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompanyNameTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CompanyNameTextFieldActionPerformed
-
-    private void AddCompanyExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddCompanyExitButtonActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_AddCompanyExitButtonActionPerformed
-
-    private void AddPlatformExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddPlatformExitButtonActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_AddPlatformExitButtonActionPerformed
-
     private void AddGameExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddGameExitButtonActionPerformed
         System.exit(0);
     }//GEN-LAST:event_AddGameExitButtonActionPerformed
-
-    private void AddCompanyClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddCompanyClearButtonActionPerformed
-        // TODO add your handling code here:
-        CompanyNameTextField.setText("");
-        CompanyLocationTextField.setText("");
-        CompanyNameErrorLabel.setText("");
-        CompanyLocationErrorLabel.setText("");
-        AddCompanyMessageLabel.setText("");
-    }//GEN-LAST:event_AddCompanyClearButtonActionPerformed
-
-    private void AddCompanyConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddCompanyConfirmButtonActionPerformed
-        // TODO add your handling code here:
-        String name = CompanyNameTextField.getText().trim();
-        String location = CompanyLocationTextField.getText().trim();
-
-        if (name.equals("")) {
-            CompanyNameErrorLabel.setText("required field");
-        }
-
-        if (location.equals("")) {
-            CompanyLocationErrorLabel.setText("required field");
-        }
-
-        if (!name.equals("") && !location.equals("")) {
-            String message = controller.addCompany(name, location);
-            AddCompanyMessageLabel.setText(message);
-
-            if (message.equals("Successful entry")) {
-                CompanyNameTextField.setText("");
-                CompanyLocationTextField.setText("");
-                CompanyNameErrorLabel.setText("");
-                CompanyLocationErrorLabel.setText("");
-            }
-        }
-    }//GEN-LAST:event_AddCompanyConfirmButtonActionPerformed
-
-    private void AddPlatformClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddPlatformClearButtonActionPerformed
-        // TODO add your handling code here:
-        PlatformNameTextField.setText("");
-        PlatformYearOfReleaseTextField.setText("");
-        PlatformNameErrorLabel.setText("");
-        PlatformYearOfReleaseErrorLabel.setText("");
-        AddPlatformMessageLabel.setText("");
-    }//GEN-LAST:event_AddPlatformClearButtonActionPerformed
-
-    private void AddPlatformConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddPlatformConfirmButtonActionPerformed
-        // TODO add your handling code here:
-        String name = PlatformNameTextField.getText().trim();
-
-        if (name.equals("")) {
-            PlatformNameErrorLabel.setText("required field");
-        }
-
-        String yearOfRelease = PlatformYearOfReleaseTextField.getText().trim();
-        if (yearOfRelease.equals("")) {
-            yearOfRelease = "NULL";
-        } else if (yearOfRelease.length() != 4) {
-            PlatformYearOfReleaseErrorLabel.setText("Error: Year must be 4 numbers");
-            return;
-        } else {
-            int year;
-            try {
-                year = Integer.parseInt(yearOfRelease);
-            } catch (NumberFormatException e) {
-                PlatformYearOfReleaseErrorLabel.setText("Error: Year must be 4 numbers");
-                return;
-            }
-        }
-
-        if (!name.equals("")) {
-            String message = controller.addPlatform(name, yearOfRelease);
-            AddPlatformMessageLabel.setText(message);
-
-            if (message.equals("Successful entry")) {
-                PlatformNameTextField.setText("");
-                PlatformYearOfReleaseTextField.setText("");
-                PlatformNameErrorLabel.setText("");
-                PlatformYearOfReleaseErrorLabel.setText("");
-            }
-        }
-    }//GEN-LAST:event_AddPlatformConfirmButtonActionPerformed
 
     private void AddGameClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddGameClearButtonActionPerformed
         // TODO add your handling code here:
@@ -672,6 +712,103 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_AddGameConfirmButtonActionPerformed
 
+    private void AddPlatformExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddPlatformExitButtonActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_AddPlatformExitButtonActionPerformed
+
+    private void AddPlatformClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddPlatformClearButtonActionPerformed
+        // TODO add your handling code here:
+        PlatformNameTextField.setText("");
+        PlatformYearOfReleaseTextField.setText("");
+        PlatformNameErrorLabel.setText("");
+        PlatformYearOfReleaseErrorLabel.setText("");
+        AddPlatformMessageLabel.setText("");
+    }//GEN-LAST:event_AddPlatformClearButtonActionPerformed
+
+    private void AddPlatformConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddPlatformConfirmButtonActionPerformed
+        // TODO add your handling code here:
+        String name = PlatformNameTextField.getText().trim();
+
+        if (name.equals("")) {
+            PlatformNameErrorLabel.setText("required field");
+        }
+
+        String yearOfRelease = PlatformYearOfReleaseTextField.getText().trim();
+        if (yearOfRelease.equals("")) {
+            yearOfRelease = "NULL";
+        } else if (yearOfRelease.length() != 4) {
+            PlatformYearOfReleaseErrorLabel.setText("Error: Year must be 4 numbers");
+            return;
+        } else {
+            int year;
+            try {
+                year = Integer.parseInt(yearOfRelease);
+            } catch (NumberFormatException e) {
+                PlatformYearOfReleaseErrorLabel.setText("Error: Year must be 4 numbers");
+                return;
+            }
+        }
+
+        if (!name.equals("")) {
+            String message = controller.addPlatform(name, yearOfRelease);
+            AddPlatformMessageLabel.setText(message);
+
+            if (message.equals("Successful entry")) {
+                PlatformNameTextField.setText("");
+                PlatformYearOfReleaseTextField.setText("");
+                PlatformNameErrorLabel.setText("");
+                PlatformYearOfReleaseErrorLabel.setText("");
+            }
+        }
+    }//GEN-LAST:event_AddPlatformConfirmButtonActionPerformed
+
+    private void AddCompanyExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddCompanyExitButtonActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_AddCompanyExitButtonActionPerformed
+
+    private void AddCompanyClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddCompanyClearButtonActionPerformed
+        // TODO add your handling code here:
+        CompanyNameTextField.setText("");
+        CompanyLocationTextField.setText("");
+        CompanyNameErrorLabel.setText("");
+        CompanyLocationErrorLabel.setText("");
+        AddCompanyMessageLabel.setText("");
+    }//GEN-LAST:event_AddCompanyClearButtonActionPerformed
+
+    private void AddCompanyConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddCompanyConfirmButtonActionPerformed
+        // TODO add your handling code here:
+        String name = CompanyNameTextField.getText().trim();
+        String location = CompanyLocationTextField.getText().trim();
+
+        if (name.equals("")) {
+            CompanyNameErrorLabel.setText("required field");
+        }
+
+        if (location.equals("")) {
+            CompanyLocationErrorLabel.setText("required field");
+        }
+
+        if (!name.equals("") && !location.equals("")) {
+            String message = controller.addCompany(name, location);
+            AddCompanyMessageLabel.setText(message);
+
+            if (message.equals("Successful entry")) {
+                CompanyNameTextField.setText("");
+                CompanyLocationTextField.setText("");
+                CompanyNameErrorLabel.setText("");
+                CompanyLocationErrorLabel.setText("");
+            }
+        }
+    }//GEN-LAST:event_AddCompanyConfirmButtonActionPerformed
+
+    private void CompanyLocationTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompanyLocationTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CompanyLocationTextFieldActionPerformed
+
+    private void CompanyNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompanyNameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CompanyNameTextFieldActionPerformed
+
     private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
         // TODO add your handling code here:
         System.exit(0);
@@ -685,7 +822,7 @@ public class Main extends javax.swing.JFrame {
         String developer = SearchDeveloperTextField.getText().trim();
         String publisher = SearchPublisherTextField.getText().trim();
         String yearOfRelease = SearchYearOfReleaseTextField.getText().trim();
-        
+
         if (yearOfRelease.equals("")) {
             // do nothing
         } else if (yearOfRelease.length() != 4) {
@@ -700,10 +837,20 @@ public class Main extends javax.swing.JFrame {
                 return;
             }
         }
-        
+
         DefaultTableModel model = controller.searchForGame(title, platform, developer, publisher, yearOfRelease, genre);
         new ResultsFrame(controller, model).setVisible(true);
     }//GEN-LAST:event_SearchButtonActionPerformed
+
+    private void SearchCompanyExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchCompanyExitButtonActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_SearchCompanyExitButtonActionPerformed
+
+    private void SearchPlatformExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchPlatformExitButtonActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_SearchPlatformExitButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -795,13 +942,27 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel PlatformYearOfReleaseLabel;
     private javax.swing.JTextField PlatformYearOfReleaseTextField;
     private javax.swing.JButton SearchButton;
+    private javax.swing.JButton SearchCompanyButton;
+    private javax.swing.JButton SearchCompanyExitButton;
+    private javax.swing.JLabel SearchCompanyLocationLabel;
+    private javax.swing.JTextField SearchCompanyLocationTextField;
+    private javax.swing.JLabel SearchCompanyMessageLabel;
+    private javax.swing.JLabel SearchCompanyNameLabel;
+    private javax.swing.JTextField SearchCompanyNameTextField;
     private javax.swing.JLabel SearchDeveloperLabel;
     private javax.swing.JTextField SearchDeveloperTextField;
     private javax.swing.JLabel SearchGenreLabel;
     private javax.swing.JTextField SearchGenreTextField;
     private javax.swing.JLabel SearchMessageLabel;
+    private javax.swing.JButton SearchPlatformButton;
+    private javax.swing.JButton SearchPlatformExitButton;
     private javax.swing.JLabel SearchPlatformLabel;
+    private javax.swing.JLabel SearchPlatformMessageLabel;
+    private javax.swing.JLabel SearchPlatformNameLabel;
+    private javax.swing.JTextField SearchPlatformNameTextField;
     private javax.swing.JTextField SearchPlatformTextField;
+    private javax.swing.JLabel SearchPlatformYORLabel;
+    private javax.swing.JTextField SearchPlatformYORTextField;
     private javax.swing.JLabel SearchPublisherLabel;
     private javax.swing.JTextField SearchPublisherTextField;
     private javax.swing.JPanel SearchTabPanel;
@@ -814,5 +975,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel YearOfReleaseLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

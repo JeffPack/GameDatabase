@@ -49,8 +49,8 @@
         <Container class="javax.swing.JPanel" name="SearchTabPanel">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Search For Game">
-                <Property name="tabTitle" type="java.lang.String" value="Search For Game"/>
+              <JTabbedPaneConstraints tabName="Search by Game">
+                <Property name="tabTitle" type="java.lang.String" value="Search by Game"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -131,7 +131,7 @@
                           <Component id="SearchPublisherLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="SearchPublisherTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="25" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="SearchButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="ExitButton" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -208,6 +208,204 @@
             </Component>
           </SubComponents>
         </Container>
+        <Container class="javax.swing.JPanel" name="jPanel1">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Search by Company">
+                <Property name="tabTitle" type="java.lang.String" value="Search by Company"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="SearchCompanyMessageLabel" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="SearchCompanyLocationLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="SearchCompanyLocationTextField" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="SearchCompanyNameLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace pref="36" max="32767" attributes="0"/>
+                                      <Component id="SearchCompanyNameTextField" min="-2" pref="200" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="192" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="SearchCompanyButton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="SearchCompanyExitButton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="SearchCompanyNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="SearchCompanyNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="SearchCompanyLocationLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="SearchCompanyLocationTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="SearchCompanyButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="SearchCompanyExitButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="220" max="32767" attributes="0"/>
+                      <Component id="SearchCompanyMessageLabel" min="-2" pref="20" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="SearchCompanyNameLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Name:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="SearchCompanyLocationLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Location:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="SearchCompanyMessageLabel">
+            </Component>
+            <Component class="javax.swing.JTextField" name="SearchCompanyLocationTextField">
+            </Component>
+            <Component class="javax.swing.JTextField" name="SearchCompanyNameTextField">
+            </Component>
+            <Component class="javax.swing.JButton" name="SearchCompanyButton">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Search"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="SearchCompanyExitButton">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Exit"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchCompanyExitButtonActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel2">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Search by Platform">
+                <Property name="tabTitle" type="java.lang.String" value="Search by Platform"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="SearchPlatformMessageLabel" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="SearchPlatformYORLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="SearchPlatformNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="SearchPlatformNameTextField" pref="200" max="32767" attributes="0"/>
+                                          <Component id="SearchPlatformYORTextField" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="SearchPlatformButton" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="SearchPlatformExitButton" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="0" pref="142" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="SearchPlatformNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="SearchPlatformNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="SearchPlatformYORLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="SearchPlatformYORTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="SearchPlatformButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="SearchPlatformExitButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="220" max="32767" attributes="0"/>
+                      <Component id="SearchPlatformMessageLabel" min="-2" pref="20" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="SearchPlatformNameLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Name:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="SearchPlatformYORLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Year of Release:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="SearchPlatformNameTextField">
+            </Component>
+            <Component class="javax.swing.JTextField" name="SearchPlatformYORTextField">
+            </Component>
+            <Component class="javax.swing.JLabel" name="SearchPlatformMessageLabel">
+            </Component>
+            <Component class="javax.swing.JButton" name="SearchPlatformButton">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Search"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="SearchPlatformExitButton">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Exit"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchPlatformExitButtonActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
         <Container class="javax.swing.JPanel" name="AddCompanyPanel">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
@@ -241,7 +439,7 @@
                                       </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="CompanyNameTextField" pref="221" max="32767" attributes="0"/>
+                                          <Component id="CompanyNameTextField" pref="235" max="32767" attributes="0"/>
                                           <Component id="CompanyLocationTextField" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -262,7 +460,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="CompanyNameErrorLabel" alignment="1" pref="51" max="32767" attributes="0"/>
+                          <Component id="CompanyNameErrorLabel" alignment="1" pref="65" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="CompanyNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="CompanyNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -381,7 +579,7 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="PlatformNameErrorLabel" max="32767" attributes="0"/>
-                                  <Component id="PlatformYearOfReleaseErrorLabel" pref="118" max="32767" attributes="0"/>
+                                  <Component id="PlatformYearOfReleaseErrorLabel" pref="123" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="AddPlatformMessageLabel" alignment="0" max="32767" attributes="0"/>
@@ -395,7 +593,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="PlatformNameErrorLabel" alignment="0" pref="34" max="32767" attributes="0"/>
+                          <Component id="PlatformNameErrorLabel" alignment="0" pref="64" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="PlatformNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="PlatformNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
