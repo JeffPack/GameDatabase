@@ -180,9 +180,9 @@ public class SQLController {
             }
         }
         
-        String sql = "select distinct title, platform from " + 
-                "developedby where " +
-                "company in "; 
+        String sql = "select distinct d.title as title, d.platform as title from " + 
+                "developedby as d join publishedby as p on d.title = p.title and d.platform = p.platform where " +
+                "d.company in "; 
                 
         String companySelect = "(select name from company where ";
         boolean addAnd = false;
@@ -198,8 +198,7 @@ public class SQLController {
         
         companySelect += ") ";
         
-        sql += companySelect + " union select distinct title, platform from " + 
-                "publishedby where company in " + companySelect;
+        sql += companySelect + " or p.company in " + companySelect;
         
         DefaultTableModel model;
         try {
