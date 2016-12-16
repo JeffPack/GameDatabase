@@ -169,7 +169,6 @@ public class SQLController {
         }
 
         return model;
-
     }
 
     public DefaultTableModel searchByCompany(String companyName, String location) {
@@ -214,6 +213,52 @@ public class SQLController {
         return model;
     }
 
+    public DefaultTableModel searchByPlatform(String platformName, String platformYearOfRelease)
+    {
+        if (platformName.equals("") && platformYearOfRelease.equals(""))
+        {
+            try {
+                return getAll();
+            } catch (SQLException e){
+                return null;
+            }
+        }
+        
+        String sql = "select distinct name, yearOfRelease from " +
+                "platform where " +
+                "name in ";
+        
+        String platformSelect = "(select platform where ";
+        boolean addAnd = false;
+        if(!platformName.equals(""))
+        {
+            addAnd = true;
+            platformSelect += "name like '%" + platformName + "%'";
+        }
+        
+        if(!platformYearOfRelease.equals(""))
+        {
+            if(addAnd) sql += " and ";
+            platformName += "YearOfRelease like '%" + platformYearOfRelease + "%'";
+        }
+        
+        platformSelect += ") ";
+        
+        sql += platformSelect + "union select distinct name, yearOfRelease from " +
+               "platform where yearOfRelease in " + platformSelect;
+        
+        DefaultTableModel model;
+        try {
+            model = driver.query(sql);
+        } catch (SQLException e) {
+            System.out.println(sql);
+            System.out.println(e.getMessage());
+            return null;
+        }
+        
+        return model;
+    }
+    
     public String updateGame(String title, String platform, String developer,
             String publisher, String yearOfRelease, String genre) {
 

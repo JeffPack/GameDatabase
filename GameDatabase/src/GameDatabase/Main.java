@@ -274,6 +274,11 @@ public class Main extends javax.swing.JFrame {
         SearchPlatformYORLabel.setText("Year of Release:");
 
         SearchPlatformButton.setText("Search");
+        SearchPlatformButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchPlatformButtonActionPerformed(evt);
+            }
+        });
 
         SearchPlatformExitButton.setText("Exit");
         SearchPlatformExitButton.addActionListener(new java.awt.event.ActionListener() {
@@ -863,6 +868,15 @@ public class Main extends javax.swing.JFrame {
         DefaultTableModel model = controller.searchByCompany(companyName, location);
         new ResultsFrame(controller, model).setVisible(true);
     }//GEN-LAST:event_SearchCompanyButtonActionPerformed
+
+    private void SearchPlatformButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchPlatformButtonActionPerformed
+        // TODO add your handling code here:
+        String platformName = SearchPlatformNameTextField.getText().trim();
+        String yearOfRelease = SearchPlatformYORTextField.getText().trim();
+        
+        DefaultTableModel model = controller.searchByPlatform(platformName, yearOfRelease);
+        new ResultsFrame(controller, model).setVisible(true);
+    }//GEN-LAST:event_SearchPlatformButtonActionPerformed
 
     /**
      * @param args the command line arguments
